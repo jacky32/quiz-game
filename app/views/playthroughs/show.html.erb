@@ -7,7 +7,7 @@
     <% end %>
     </div>
   <div class="flex flex-row items-center justify-center w-full h-48 gap-4 m-2 card bg-base-300 rounded-box">
-    Současné skóre: <span class="text-xl font-bold"><%= @playthrough.score %></span>
+    Současné skóre: <span class="text-xl font-bold"><%= @playthrough.score || 0 %></span>
   </div>
   <div class="flex flex-row items-center justify-center w-full h-48 gap-4 m-2 card bg-base-300 rounded-box">
     <%= link_to edit_user_path(Current.user), class: "text-lg" do %>
@@ -18,17 +18,62 @@
     <% end %>
   </div>
 </section>
-<section class="grid grid-cols-2">
-  <div class="">
+<section class="grid grid-cols-5">
+  <div class="grid w-full max-w-3xl grid-cols-2 col-span-4 grid-rows-4 gap-2 mx-auto">
+    <div class="flex items-center justify-center col-span-2 text-2xl text-center">
+      <%= @playthrough.current_question.body %>
+    </div>
+    <% @playthrough.current_question.question_options.random.each_with_index do |question_option, index| %>
+      <%= form_with model: @playthrough, url: answer_question_playthroughs_path, method: :post do |f| %>
+        <%= f.hidden_field :question_option_id, value: question_option.uuid %>
+        <%= f.submit "#{('A'..'D').each_with_index.to_h.invert[index]}: #{question_option.text}", class: "btn btn-primary w-full h-full" %>
+      <% end %>
+    <% end %>
+    <div class="grid items-center justify-center grid-cols-3 col-span-2 gap-2">
+      <div class="w-full h-full">
+        <% if @playthrough.current_playthroughs_question.text_hint_used? %>
+          Nápověda: <%= @playthrough.current_question.hint %>
+        <% elsif @playthrough.text_hint_used? %>
+          <%= link_to "#", class: "btn btn-secondary btn-sm btn-disabled", disabled: true do %>
+            Použít textovou nápovědu
+          <% end %>
+        <% else %>
+          <%= link_to use_text_hint_playthroughs_path(@playthrough), method: :post, class: "btn btn-secondary btn-sm w-full h-full" do %>
+            Použít textovou nápovědu
+          <% end %>
+        <% end %>
+      </div>
+      <div class="w-full h-full">
+        <% if @playthrough.fifty_hint_used? %>
+          <%= link_to "#", class: "btn btn-secondary btn-sm btn-disabled", disabled: true do %>
+            Vyměnit otázku
+          <% end %>
+        <% else %>
+          <%= link_to use_fifty_hint_playthroughs_path(@playthrough), method: :post, class: "btn btn-secondary btn-sm w-full h-full" do %>
+            Použít 50/50 nápovědu
+          <% end %>
+        <% end %>
+      </div>
+      <div class="w-full h-full">
+        <% if @playthrough.question_swap_used? %>
+          <%= link_to "#", class: "btn btn-secondary btn-sm btn-disabled", disabled: true do %>
+            Vyměnit otázku
+          <% end %>
+        <% else %>
+          <%= link_to use_question_swap_playthroughs_path(@playthrough), method: :post, class: "btn btn-secondary btn-sm w-full h-full" do %>
+            Vyměnit otázku
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div class="">
+  <div class="col-span-1">
     <ul class="steps steps-vertical steps-reverse">
       <% (1..10).to_a.each do |level| %>
-      <li class="step">
-        <%= "1" + "0" * (level - 1) %>
+      <li class="step <%= @current_level > (10 - level) ? "step-primary" : "" %>">
+        <%= "1" + "0" * (10 - level) %>
         </li>
       <% end %>
     </ul>
   </div>
 </section>
-<%= @playthrough.current_question.body %>

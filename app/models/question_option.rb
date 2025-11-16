@@ -3,6 +3,7 @@ class QuestionOption < ApplicationRecord
   before_create :assign_uuid
 
   scope :correct, -> { where(correct: true) }
+  scope :random, -> { order("RANDOM()") }
 
   def self.by_uuid(uuid)
     find_by(uuid: uuid)

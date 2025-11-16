@@ -41,7 +41,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_16_145200) do
 
   create_table "playthroughs", force: :cascade do |t|
     t.datetime "created_at", null: false
-    t.integer "score"
+    t.integer "score", default: 0, null: false
     t.integer "status", default: 0, null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false

@@ -10,7 +10,12 @@ Rails.application.routes.draw do
   resources :question_options
   resources :questions
 
-  resource :playthroughs, only: %i[show update]
+  resource :playthroughs, only: %i[show update] do
+    post :answer_question
+    post :use_text_hint
+    post :use_fifty_hint
+    post :use_question_swap
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

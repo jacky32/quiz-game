@@ -1,8 +1,8 @@
 
-<div class="mx-auto md:w-96 w-full">
-  <%= form_for @user, url: registrations_path do |form| %>
-    <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-      <h1 class="font-bold text-4xl mb-4">Registrace</h1>
+<div class="w-full mx-auto md:w-96">
+  <%= form_with model: @user, url: registrations_path do |form| %>
+    <fieldset class="p-4 border fieldset bg-base-200 border-base-300 rounded-box w-xs">
+      <h1 class="mb-4 text-4xl font-bold">Registrace</h1>
       <%= image_tag "logo.png" %>
 
       <label class="label" for="name">Jméno</label>
@@ -20,7 +20,7 @@
       <div class="flex justify-center">
         <%= form.submit "Registrovat se", class: "btn btn-primary mt-8 max-w-48 w-full" %>
       </div>
-      <div class=" mt-8 text-center text-sm text-gray-500 ">
+      <div class="mt-8 text-sm text-center text-gray-500 ">
         Máte už účet? <%= link_to "Přihlaste se", new_session_path, class: "text-gray-700 underline hover:no-underline" %>
       </div>
     </fieldset>

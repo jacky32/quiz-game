@@ -1,8 +1,8 @@
 
-<div class="mx-auto md:w-96 w-full">
-  <%= form_for @user, url: user_path(@user), method: :patch do |form| %>
-    <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-      <h1 class="font-bold text-4xl mb-4">Upravit profil</h1>
+<div class="w-full mx-auto md:w-96">
+  <%= form_with model: @user, method: :patch do |form| %>
+    <fieldset class="p-4 border fieldset bg-base-200 border-base-300 rounded-box w-xs">
+      <h1 class="mb-4 text-4xl font-bold">Upravit profil</h1>
       <%= image_tag "logo.png" %>
 
       <label class="label" for="avatar">Avatar</label>
