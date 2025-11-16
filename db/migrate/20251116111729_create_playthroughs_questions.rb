@@ -8,9 +8,9 @@ class CreatePlaythroughsQuestions < ActiveRecord::Migration[8.1]
       t.boolean :fifty_hint_used
       t.references :fifty_hint_question_option1, foreign_key: { to_table: :question_options }
       t.references :fifty_hint_question_option2, foreign_key: { to_table: :question_options }
-
+      t.integer :status, default: 0, null: false
       t.boolean :question_swap_used
-      t.references :swapped_question, foreign_key: true
+      t.references :swapped_question, foreign_key: { to_table: :questions }
 
       t.timestamps
     end

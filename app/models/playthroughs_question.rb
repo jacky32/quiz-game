@@ -11,6 +11,10 @@ class PlaythroughsQuestion < ApplicationRecord
 
   validate :hint_must_be_used_only_once_per_playthrough
 
+  enum :status, { unanswered: 0, answered_correctly: 1, answered_incorrectly: 2 }
+
+  scope :answered, -> { where.not(status: :unanswered) }
+
   private
 
   def hint_must_be_used_only_once_per_playthrough

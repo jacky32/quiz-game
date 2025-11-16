@@ -8,4 +8,31 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-User.create! email_address: "admin@account.org", password: "adminADMIN123", password_confirmation: "adminADMIN123", role: :admin, name: "Administrator"
+ActiveRecord::Base.transaction do
+  User.create! email_address: "admin@account.org", password: "adminADMIN123", password_confirmation: "adminADMIN123", role: :admin, name: "Administrator"
+
+  # Questions
+
+  5.times do |i|
+    (1..10).to_a.each do |level|
+      question = Question.new(
+        name: "Sample Question #{i + 1} Level #{level}",
+        body: "What is the answer to question #{i + 1} at level #{level}?",
+        level: level,
+        hint: "This is a hint for question #{i + 1} at level #{level}.",
+        active: true,
+        creator: User.first
+      )
+
+      # Create question options
+      4.times do |j|
+        question.question_options.build(
+          text: "Option #{j + 1} for question #{i + 1} at level #{level}",
+          correct: j == 0,
+          question: question
+        )
+      end
+      question.save!
+    end
+  end
+end

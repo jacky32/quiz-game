@@ -42,7 +42,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_16_145200) do
   create_table "playthroughs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.integer "score"
-    t.integer "status"
+    t.integer "status", default: 0, null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
     t.index ["user_id"], name: "index_playthroughs_on_user_id"
@@ -57,6 +57,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_16_145200) do
     t.integer "question_id", null: false
     t.boolean "question_swap_used"
     t.integer "selected_question_option_id"
+    t.integer "status", default: 0, null: false
     t.integer "swapped_question_id"
     t.boolean "text_hint_used"
     t.datetime "updated_at", null: false
@@ -74,7 +75,9 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_16_145200) do
     t.integer "question_id", null: false
     t.string "text", null: false
     t.datetime "updated_at", null: false
+    t.string "uuid", null: false
     t.index ["question_id"], name: "index_question_options_on_question_id"
+    t.index ["uuid"], name: "index_question_options_on_uuid"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -117,7 +120,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_16_145200) do
   add_foreign_key "playthroughs_questions", "question_options", column: "fifty_hint_question_option2_id"
   add_foreign_key "playthroughs_questions", "question_options", column: "selected_question_option_id"
   add_foreign_key "playthroughs_questions", "questions"
-  add_foreign_key "playthroughs_questions", "swapped_questions"
+  add_foreign_key "playthroughs_questions", "questions", column: "swapped_question_id"
   add_foreign_key "question_options", "questions"
   add_foreign_key "questions", "users", column: "creator_id"
   add_foreign_key "sessions", "users"
