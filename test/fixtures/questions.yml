@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  body: MyText
+  correct_answer: MyText
+  wrong_answer1: MyText
+  wrong_answer2: MyText
+  wrong_answer3: MyText
+  level: 1
+  hint: MyText
+
+two:
+  name: MyString
+  body: MyText
+  correct_answer: MyText
+  wrong_answer1: MyText
+  wrong_answer2: MyText
+  wrong_answer3: MyText
+  level: 1
+  hint: MyText

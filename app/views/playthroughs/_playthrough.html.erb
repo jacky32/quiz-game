@@ -1,0 +1,26 @@
+<div id="<%= dom_id playthrough %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= playthrough.user_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Score:</strong>
+    <%= playthrough.score %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Status:</strong>
+    <%= playthrough.status %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Text hint used:</strong>
+    <%= playthrough.text_hint_used? ? "Yes" : "No" %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Fifty hint user:</strong>
+    <%= playthrough.fifty_hint_user? ? "Yes" : "No" %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Question swap used:</strong>
+    <%= playthrough.question_swap_used? ? "Yes" : "No" %>
+  </div>
+</div>

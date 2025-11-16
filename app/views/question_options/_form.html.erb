@@ -1,0 +1,32 @@
+<%= form_with(model: question_option, class: "contents") do |form| %>
+  <% if question_option.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(question_option.errors.count, "error") %> prohibited this question_option from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% question_option.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :question_id %>
+    <%= form.text_field :question_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": question_option.errors[:question_id].none?, "border-red-400 focus:outline-red-600": question_option.errors[:question_id].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :text %>
+    <%= form.text_field :text, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": question_option.errors[:text].none?, "border-red-400 focus:outline-red-600": question_option.errors[:text].any?}] %>
+  </div>
+
+  <div class="my-5 flex items-center gap-2">
+    <%= form.label :correct %>
+    <%= form.checkbox :correct, class: ["block shadow-sm rounded-md border order-first h-5 w-5", {"border-gray-400 focus:outline-blue-600": question_option.errors[:correct].none?, "border-red-400 focus:outline-red-600": question_option.errors[:correct].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

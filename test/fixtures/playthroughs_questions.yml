@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  question: one
+  playthrough: one
+  correct_answer: false
+  text_hint_used: false
+  fifty_hint_used: false
+  question_swap_used: false
+  swapped_question: one
+
+two:
+  question: two
+  playthrough: two
+  correct_answer: false
+  text_hint_used: false
+  fifty_hint_used: false
+  question_swap_used: false
+  swapped_question: two
