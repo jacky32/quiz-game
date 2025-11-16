@@ -1,0 +1,24 @@
+<%# Header %>
+<section class="flex w-full ">
+  <div class="card bg-base-300 rounded-box flex justify-center items-center  h-48 w-full  m-2">
+    <div class="text-xl font-semibold">Současné skóre: <%= Current.user.best_score %></div>
+    <div class="text-lg">Pořadí v žebříčku: <%= Current.user.leaderboard_position %></div>
+  </div>
+
+  <div class="card bg-base-300 rounded-box flex justify-center items-center h-72 w-full  m-2">
+    <%= image_tag "logo.png", class: "h-48" %>
+    <div class="text-2xl">Vítejte, <%= Current.user.name %>!</div>
+  </div>
+
+  <div class="card bg-base-300 rounded-box flex h-48 w-full  m-2 flex-row justify-center items-center gap-4">
+    <%= link_to edit_user_path(Current.user), class: "text-lg" do %>
+      <%= Current.user.name %>
+    <% end %>
+    <%= link_to edit_user_path(Current.user) do %>
+      <%= image_tag Current.user.avatar, class: "h-32 w-32 rounded-full" if Current.user.avatar.attached? %>
+    <% end %>
+  </div>
+</div>
+</section>
+
+<%#  %>
