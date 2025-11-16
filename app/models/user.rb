@@ -18,6 +18,14 @@ class User < ApplicationRecord
 
   enum :role, { regular: 0, admin: 99 }
 
+  scope :top_leaderboard, lambda {
+    joins(:playthroughs)
+      .group("users.id")
+      .select("users.*, MAX(playthroughs.score) AS best_score")
+      .order("best_score DESC")
+      .limit(5)
+  }
+
 
   def best_score
     playthroughs.maximum(:score) || 0

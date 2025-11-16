@@ -1,5 +1,5 @@
 <%# Header %>
-<section class="flex w-full ">
+<section class="flex w-full">
   <div class="card bg-base-300 rounded-box flex justify-center items-center  h-48 w-full  m-2">
     <div class="text-xl font-semibold">Současné skóre: <%= Current.user.best_score %></div>
     <div class="text-lg">Pořadí v žebříčku: <%= Current.user.leaderboard_position %></div>
@@ -18,7 +18,30 @@
       <%= image_tag Current.user.avatar, class: "h-32 w-32 rounded-full" if Current.user.avatar.attached? %>
     <% end %>
   </div>
-</div>
 </section>
 
-<%#  %>
+<%# Top players %>
+
+<section class="flex w-full h-auto ">
+  <div class="card bg-base-300 rounded-box flex w-full h-full min-h-96 m-2 flex-row justify-center items-center gap-4">
+    <ul class="list bg-base-100 rounded-box shadow-md">
+      <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Top hráči</li>
+
+      <%= User.top_leaderboard.find_each.with_index(1) do |user, index| %>
+        <li class="list-row">
+          <div><%= index %>.</div>
+          <div><%= image_tag user.avatar, class: "size-10 rounded-box" if user.avatar.attached? %></div>
+          <div>
+            <div><%= user.name %></div>
+            <div class="text-xs uppercase font-semibold opacity-60"><%= user.best_score %></div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="card bg-base-300 rounded-box flex w-full  h-full min-h-96 m-2  justify-center items-center gap-4 flex-col">
+    <div>Text - úvod</div>
+    <%= link_to "Začít hru", new_playthrough_path, class: "btn btn-primary" %>
+    <div>Text - pravidla</div>
+  </div>
+</section>
