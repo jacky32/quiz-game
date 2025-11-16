@@ -4,8 +4,7 @@ class PlaythroughsQuestion < ApplicationRecord
   belongs_to :swapped_question, optional: true, class_name: "Question"
 
   belongs_to :selected_question_option, optional: true, class_name: "QuestionOption"
-  belongs_to :fifty_hint_question_option1, optional: true, class_name: "QuestionOption"
-  belongs_to :fifty_hint_question_option2, optional: true, class_name: "QuestionOption"
+  belongs_to :fifty_hint_question_option, optional: true, class_name: "QuestionOption"
 
   validate :question_options_belong_to_question
 
@@ -36,12 +35,8 @@ class PlaythroughsQuestion < ApplicationRecord
       errors.add(:selected_question_option, "must belong to the associated question")
     end
 
-    if fifty_hint_question_option1 && fifty_hint_question_option1.question_id != question_id
-      errors.add(:fifty_hint_question_option1, "must belong to the associated question")
-    end
-
-    if fifty_hint_question_option2 && fifty_hint_question_option2.question_id != question_id
-      errors.add(:fifty_hint_question_option2, "must belong to the associated question")
+    if fifty_hint_question_option && fifty_hint_question_option.question_id != question_id
+      errors.add(:fifty_hint_question_option, "must belong to the associated question")
     end
   end
 end

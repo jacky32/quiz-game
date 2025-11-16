@@ -49,6 +49,19 @@ class Playthrough < ApplicationRecord
     end
   end
 
+  def use_text_hint
+    current_playthroughs_question.update(text_hint_used: true)
+  end
+
+  def use_fifty_hint
+    current_playthroughs_question.update(fifty_hint_used: true)
+  end
+
+  def use_question_swap
+    fifty_hint_question_option_id = current_question.question_options.incorrect.random.first.id
+    current_playthroughs_question.update(question_swap_used: true, fifty_hint_question_option_id:)
+  end
+
   private
 
   def generate_questions

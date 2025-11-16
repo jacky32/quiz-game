@@ -23,10 +23,15 @@
     <div class="flex items-center justify-center col-span-2 text-2xl text-center">
       <%= @playthrough.current_question.body %>
     </div>
+    <% fifty_hint_currently_used = @playthrough.current_playthroughs_question.fifty_hint_used? %>
     <% @playthrough.current_question.question_options.random.each_with_index do |question_option, index| %>
-      <%= form_with model: @playthrough, url: answer_question_playthroughs_path, method: :post do |f| %>
-        <%= f.hidden_field :question_option_id, value: question_option.uuid %>
-        <%= f.submit "#{('A'..'D').each_with_index.to_h.invert[index]}: #{question_option.text}", class: "btn btn-primary w-full h-full" %>
+      <% if !fifty_hint_currently_used || question_option.correct? || @playthrough.current_playthroughs_question.fifty_hint_question_option&.id == question_option&.id %>
+        <%= form_with model: @playthrough, url: answer_question_playthroughs_path, method: :post do |f| %>
+          <%= f.hidden_field :question_option_id, value: question_option.uuid %>
+          <%= f.submit "#{('A'..'D').each_with_index.to_h.invert[index]}: #{question_option.text}", class: "btn btn-primary w-full h-full" %>
+        <% end %>
+      <% else %>
+          <%= link_to "#{('A'..'D').each_with_index.to_h.invert[index]}: #{question_option.text}", "#", class: "btn btn-primary w-full h-full btn-disabled", disabled: true %>
       <% end %>
     <% end %>
     <div class="grid items-center justify-center grid-cols-3 col-span-2 gap-2">
@@ -34,34 +39,28 @@
         <% if @playthrough.current_playthroughs_question.text_hint_used? %>
           Nápověda: <%= @playthrough.current_question.hint %>
         <% elsif @playthrough.text_hint_used? %>
-          <%= link_to "#", class: "btn btn-secondary btn-sm btn-disabled", disabled: true do %>
-            Použít textovou nápovědu
-          <% end %>
+          <%= link_to "Nápověda", "#", class: "btn btn-secondary btn-sm btn-disabled w-full h-full", disabled: true %>
         <% else %>
-          <%= link_to use_text_hint_playthroughs_path(@playthrough), method: :post, class: "btn btn-secondary btn-sm w-full h-full" do %>
-            Použít textovou nápovědu
+          <%= form_with model: @playthrough, url: use_text_hint_playthroughs_path, method: :post, class: "h-full w-full" do |f| %>
+            <%= f.submit "Nápověda", class: "btn btn-secondary btn-sm w-full h-full" %>
           <% end %>
         <% end %>
       </div>
       <div class="w-full h-full">
         <% if @playthrough.fifty_hint_used? %>
-          <%= link_to "#", class: "btn btn-secondary btn-sm btn-disabled", disabled: true do %>
-            Vyměnit otázku
-          <% end %>
+          <%= link_to "50:50", "#", class: "btn btn-secondary btn-sm btn-disabled w-full h-full", disabled: true %>
         <% else %>
-          <%= link_to use_fifty_hint_playthroughs_path(@playthrough), method: :post, class: "btn btn-secondary btn-sm w-full h-full" do %>
-            Použít 50/50 nápovědu
+          <%= form_with model: @playthrough, url: use_fifty_hint_playthroughs_path, method: :post, class: "h-full w-full" do |f| %>
+            <%= f.submit "50:50", class: "btn btn-secondary btn-sm w-full h-full" %>
           <% end %>
         <% end %>
       </div>
       <div class="w-full h-full">
         <% if @playthrough.question_swap_used? %>
-          <%= link_to "#", class: "btn btn-secondary btn-sm btn-disabled", disabled: true do %>
-            Vyměnit otázku
-          <% end %>
+          <%= link_to "Vyměnit otázku", "#", class: "btn btn-secondary btn-sm btn-disabled w-full h-full", disabled: true %>
         <% else %>
-          <%= link_to use_question_swap_playthroughs_path(@playthrough), method: :post, class: "btn btn-secondary btn-sm w-full h-full" do %>
-            Vyměnit otázku
+          <%= form_with model: @playthrough, url: use_question_swap_playthroughs_path, method: :post, class: "h-full w-full" do |f| %>
+            <%= f.submit "Vyměnit otázku", class: "btn btn-secondary btn-sm w-full h-full" %>
           <% end %>
         <% end %>
       </div>

@@ -22,12 +22,33 @@ class PlaythroughsController < ApplicationController
   end
 
   def use_text_hint
+    redirect_to playthroughs_path, alert: "Textová nápověda již byla použita." and return if @playthrough.text_hint_used?
+
+    if @playthrough.use_text_hint
+      redirect_to playthroughs_path, notice: "Textová nápověda byla úspěšně použita."
+    else
+      redirect_to playthroughs_path, alert: "Nepodařilo se použít textovou nápovědu."
+    end
   end
 
   def use_fifty_hint
+    redirect_to playthroughs_path, alert: "Nápověda 50:50 již byla použita." and return if @playthrough.fifty_hint_used?
+
+    if @playthrough.use_fifty_hint
+      redirect_to playthroughs_path, notice: "Nápověda 50:50 byla úspěšně použita."
+    else
+      redirect_to playthroughs_path, alert: "Nepodařilo se použít nápovědu 50:50."
+    end
   end
 
   def use_question_swap
+    redirect_to playthroughs_path, alert: "Výměna otázky již byla použita." and return if @playthrough.question_swap_used?
+
+    if @playthrough.use_question_swap
+      redirect_to playthroughs_path, notice: "Výměna otázky byla úspěšně použita."
+    else
+      redirect_to playthroughs_path, alert: "Nepodařilo se použít výměnu otázky."
+    end
   end
 
   private

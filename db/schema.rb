@@ -50,8 +50,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_16_145200) do
 
   create_table "playthroughs_questions", force: :cascade do |t|
     t.datetime "created_at", null: false
-    t.integer "fifty_hint_question_option1_id"
-    t.integer "fifty_hint_question_option2_id"
+    t.integer "fifty_hint_question_option_id"
     t.boolean "fifty_hint_used"
     t.integer "playthrough_id", null: false
     t.integer "question_id", null: false
@@ -61,8 +60,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_16_145200) do
     t.integer "swapped_question_id"
     t.boolean "text_hint_used"
     t.datetime "updated_at", null: false
-    t.index ["fifty_hint_question_option1_id"], name: "index_playthroughs_questions_on_fifty_hint_question_option1_id"
-    t.index ["fifty_hint_question_option2_id"], name: "index_playthroughs_questions_on_fifty_hint_question_option2_id"
+    t.index ["fifty_hint_question_option_id"], name: "index_playthroughs_questions_on_fifty_hint_question_option_id"
     t.index ["playthrough_id"], name: "index_playthroughs_questions_on_playthrough_id"
     t.index ["question_id"], name: "index_playthroughs_questions_on_question_id"
     t.index ["selected_question_option_id"], name: "index_playthroughs_questions_on_selected_question_option_id"
@@ -116,8 +114,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_16_145200) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "playthroughs", "users"
   add_foreign_key "playthroughs_questions", "playthroughs"
-  add_foreign_key "playthroughs_questions", "question_options", column: "fifty_hint_question_option1_id"
-  add_foreign_key "playthroughs_questions", "question_options", column: "fifty_hint_question_option2_id"
+  add_foreign_key "playthroughs_questions", "question_options", column: "fifty_hint_question_option_id"
   add_foreign_key "playthroughs_questions", "question_options", column: "selected_question_option_id"
   add_foreign_key "playthroughs_questions", "questions"
   add_foreign_key "playthroughs_questions", "questions", column: "swapped_question_id"

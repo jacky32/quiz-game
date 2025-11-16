@@ -6,8 +6,7 @@ class CreatePlaythroughsQuestions < ActiveRecord::Migration[8.1]
       t.references :selected_question_option, foreign_key: { to_table: :question_options }
       t.boolean :text_hint_used
       t.boolean :fifty_hint_used
-      t.references :fifty_hint_question_option1, foreign_key: { to_table: :question_options }
-      t.references :fifty_hint_question_option2, foreign_key: { to_table: :question_options }
+      t.references :fifty_hint_question_option, foreign_key: { to_table: :question_options }
       t.integer :status, default: 0, null: false
       t.boolean :question_swap_used
       t.references :swapped_question, foreign_key: { to_table: :questions }
