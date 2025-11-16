@@ -1,39 +1,28 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <% if alert = flash[:alert] %>
-    <p class="py-2 px-3 bg-red-50 mb-5 text-red-500 font-medium rounded-lg inline-block" id="alert"><%= alert %></p>
-  <% end %>
 
-  <% if notice = flash[:notice] %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
+<div class="mx-auto md:w-96 w-full">
+  <%= form_for @user, url: registrations_path do |form| %>
+    <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+      <h1 class="font-bold text-4xl mb-4">Registrace</h1>
+      <%= image_tag "logo.png" %>
 
-  <h1 class="font-bold text-4xl">Registrace</h1>
+      <label class="label" for="name">Jméno</label>
+      <%= form.text_field :name, required: true, autofocus: true, autocomplete: "nickname", placeholder: "Jméno", value: params[:name], class: "input" %>
 
-  <%= form_for @user, url: registrations_path, class: "contents" do |form| %>
-    <div class="my-5">
-      <%= form.text_field :name, required: true, autofocus: true, autocomplete: "name", placeholder: "Jméno", value: params[:name], class: "block shadow-sm rounded-md border border-gray-400 focus:outline-blue-600 px-3 py-2 mt-2 w-full" %>
-    </div>
+      <label class="label" for="email_address">Email</label>
+      <%= form.email_field :email_address, required: true, autocomplete: "username", placeholder: "Email", value: params[:email_address], class: "input" %>
 
-    <div class="my-5">
-      <%= form.email_field :email_address, required: true, autocomplete: "username", placeholder: "Email", value: params[:email_address], class: "block shadow-sm rounded-md border border-gray-400 focus:outline-blue-600 px-3 py-2 mt-2 w-full" %>
-    </div>
+      <label class="label" for="password">Heslo</label>
+      <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Heslo", maxlength: 72, class: "input" %>
 
-    <div class="my-5">
-      <%= form.password_field :password, required: true, placeholder: "Heslo", maxlength: 72, class: "block shadow-sm rounded-md border border-gray-400 focus:outline-blue-600 px-3 py-2 mt-2 w-full" %>
-    </div>
+      <label class="label" for="password">Potvrdit heslo</label>
+      <%= form.password_field :password_confirmation, required: true, autocomplete: "current-password", placeholder: "Potvrdit heslo", maxlength: 72, class: "input" %>
 
-    <div class="my-5">
-      <%= form.password_field :password_confirmation, required: true, placeholder: "Potvrzení hesla", maxlength: 72, class: "block shadow-sm rounded-md border border-gray-400 focus:outline-blue-600 px-3 py-2 mt-2 w-full" %>
-    </div>
-
-    <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
-      <div class="inline">
-        <%= form.submit "Registrovat", class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+      <div class="flex justify-center">
+        <%= form.submit "Registrovat se", class: "btn btn-primary mt-8 max-w-48 w-full" %>
       </div>
-
-      <div class="mt-4 text-sm text-gray-500 sm:mt-0">
-        <%= link_to "Zapomněli jste heslo?", new_password_path, class: "text-gray-700 underline hover:no-underline" %>
+      <div class=" mt-8 text-center text-sm text-gray-500 ">
+        Máte už účet? <%= link_to "Přihlaste se", new_session_path, class: "text-gray-700 underline hover:no-underline" %>
       </div>
-    </div>
+    </fieldset>
   <% end %>
 </div>

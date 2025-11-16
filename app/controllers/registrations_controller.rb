@@ -9,6 +9,11 @@ class RegistrationsController < ApplicationController
     with: -> { redirect_to new_registration_url, alert: "Try again later." }
 
   def new
+    if authenticated?
+      redirect_to root_url, notice: "Jste již přihlášen."
+      return
+    end
+
     @user = User.new
   end
 
@@ -17,9 +22,9 @@ class RegistrationsController < ApplicationController
 
     if @user.save
       start_new_session_for @user
-      redirect_to after_authentication_url, notice: "Welcome!"
+      redirect_to after_authentication_url, notice: "Úspěšně jste se zaregistrovali."
     else
-      flash[:alert] = "Email or password confirmation invalid."
+      flash[:alert] = @user.errors.full_messages.to_sentence
       render :new, status: :unprocessable_entity
     end
   end

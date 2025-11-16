@@ -1,0 +1,11 @@
+<%- if flash.any? %>
+  <div class="z-50 mt-16 toast toast-end toast-top">
+    <%- flash.each do |name, message| %>
+      <% alert_class = { success: "alert-success text-success-content", notice: "alert-info text-info-content", alert: "alert-warning text-warning-content", error: "alert-error text-error-content", }[name.to_sym] || "bg-neutral text-neutral-content" %>
+        <div role="alert" class="cursor-pointer select-none alert <%= alert_class %>" data-controller="removals" data-action="click->removals#remove" data-removals-autoremove-value="true">
+          <span><%= message %></span>
+        </div>
+      <% flash.discard(name) %>
+    <% end %>
+  </div>
+<% end %>
