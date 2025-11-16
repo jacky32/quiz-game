@@ -69,8 +69,8 @@
   <div class="col-span-1">
     <ul class="steps steps-vertical steps-reverse">
       <% (1..10).to_a.each do |level| %>
-      <li class="step <%= @current_level > (10 - level) ? "step-primary" : "" %>">
-        <%= "1" + "0" * (10 - level) %>
+        <li class="step <%= @current_level > (11 - level) ? "step-primary" : "" %>">
+          <%= "1" + "0" * (10 - level) %>
         </li>
       <% end %>
     </ul>
