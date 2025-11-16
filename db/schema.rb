@@ -50,6 +50,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_16_145200) do
 
   create_table "playthroughs_questions", force: :cascade do |t|
     t.datetime "created_at", null: false
+    t.boolean "disable_text_hint", default: false
     t.integer "fifty_hint_question_option_id"
     t.boolean "fifty_hint_used"
     t.integer "playthrough_id", null: false

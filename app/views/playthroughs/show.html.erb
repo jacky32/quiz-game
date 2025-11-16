@@ -36,8 +36,8 @@
     <% end %>
     <div class="grid items-center justify-center grid-cols-3 col-span-2 gap-2">
       <div class="w-full h-full">
-        <% if @playthrough.current_playthroughs_question.text_hint_used? %>
-          Nápověda: <%= @playthrough.current_question.hint %>
+        <% if @playthrough.current_playthroughs_question.text_hint_used? && !@playthrough.current_playthroughs_question.disable_text_hint? %>
+          <button class="w-full h-full btn btn-secondary" onclick="hint_modal.showModal()">Otevřít nápovědu</button>
         <% elsif @playthrough.text_hint_used? %>
           <%= link_to "Nápověda", "#", class: "btn btn-secondary btn-sm btn-disabled w-full h-full", disabled: true %>
         <% else %>
@@ -76,3 +76,17 @@
     </ul>
   </div>
 </section>
+
+<% if @playthrough.current_playthroughs_question.text_hint_used? && !@playthrough.current_playthroughs_question.disable_text_hint? %>
+  <dialog id="hint_modal" class="modal">
+    <div class="modal-box">
+      <h3 class="text-lg font-bold">Nápověda</h3>
+      <p class="py-4"><%= @playthrough.current_question.hint %></p>
+      <div class="modal-action">
+        <form method="dialog">
+          <button class="btn">Zavřít</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
+<% end %>

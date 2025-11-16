@@ -3,7 +3,7 @@ class Playthrough < ApplicationRecord
 
   has_many :playthroughs_questions, dependent: :destroy
   has_many :questions, through: :playthroughs_questions
-  has_one :current_playthroughs_question, -> { where(status: :unanswered).joins(:question).order("question.level ASC") }, class_name: "PlaythroughsQuestion"
+  has_one :current_playthroughs_question, -> { unanswered.joins(:question).order("question.level ASC") }, class_name: "PlaythroughsQuestion"
   has_one :current_question, through: :current_playthroughs_question, source: :question
 
   enum :status, { in_progress: 0, completed: 1 }
@@ -54,12 +54,17 @@ class Playthrough < ApplicationRecord
   end
 
   def use_fifty_hint
-    current_playthroughs_question.update(fifty_hint_used: true)
+    fifty_hint_question_option_id = current_question.question_options.incorrect.random.first.id
+    current_playthroughs_question.update(fifty_hint_used: true, fifty_hint_question_option_id:)
   end
 
   def use_question_swap
-    fifty_hint_question_option_id = current_question.question_options.incorrect.random.first.id
-    current_playthroughs_question.update(question_swap_used: true, fifty_hint_question_option_id:)
+    current_playthroughs_question.update(
+      swapped_question: current_question,
+      question: Question.active.where.not(id: current_question.id).where(level: current_question.level).random.first,
+      question_swap_used: true,
+      disable_text_hint: true
+    )
   end
 
   private

@@ -17,6 +17,7 @@ class PlaythroughsController < ApplicationController
     when :finished
       redirect_to root_path, notice: "Hra dokončena! Vaše konečné skóre je #{@playthrough.score}."
     when :incorrect_answer
+      # TODO: Zobrazit stranku s odpovedmi
       redirect_to root_path, alert: "Špatná odpověď. Hra byla ukončena, vaše skóre je #{@playthrough.score}."
     end
   end
