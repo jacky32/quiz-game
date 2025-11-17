@@ -36,3 +36,5 @@ ActiveRecord::Base.transaction do
     end
   end
 end
+
+# TODO: Generate users, playthroughs to fill leaderboard
