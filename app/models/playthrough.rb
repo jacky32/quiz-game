@@ -1,4 +1,17 @@
 class Playthrough < ApplicationRecord
+  SCORE_BY_LEVEL = {
+    10=>1_000_000,
+    9=>500_000,
+    8=>250_000,
+    7=>100_000,
+    6=>50_000,
+    5=>20_000,
+    4=>10_000,
+    3=>5_000,
+    2=>2_000,
+    1=>1_000,
+    0 => 0
+  }.freeze
   belongs_to :user
 
   has_many :playthroughs_questions, dependent: :destroy
@@ -32,8 +45,8 @@ class Playthrough < ApplicationRecord
   def answer_current_question(selected_option)
     pq = playthroughs_questions.find_by(question: current_question)
     if selected_option == current_question.correct_option
+      self.score += SCORE_BY_LEVEL[current_question.level]
       pq.update(status: :answered_correctly, selected_question_option: selected_option)
-      self.score += 1
     else
       pq.update(status: :answered_incorrectly, selected_question_option: selected_option)
       completed!

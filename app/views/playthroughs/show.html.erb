@@ -1,7 +1,7 @@
 <% content_for :title, "Showing playthrough" %>
 
 <%= render "layouts/header" do %>
-  <div class="text-4xl">
+  <div class="text-2xl">
     Současné skóre: <span class="font-bold"><%= @playthrough.score || 0 %></span>
   </div>
 <% end %>
@@ -58,7 +58,7 @@
     <ul class="steps steps-vertical steps-reverse">
       <% (1..10).to_a.each do |level| %>
         <li class="step <%= @current_level > (11 - level) ? "step-primary" : "" %>">
-          <%= "1" + "0" * (10 - level) %>
+          <%= Playthrough::SCORE_BY_LEVEL[11 - level] %>
         </li>
       <% end %>
     </ul>
