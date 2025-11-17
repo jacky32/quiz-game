@@ -1,0 +1,44 @@
+<% content_for :title, "Administrace otázek" %>
+
+<%= render "layouts/header" do %>
+  <div class="text-4xl">Administrace otázek</div>
+<% end %>
+
+<div class="m-16 overflow-x-auto border rounded-box border-base-content/5 bg-base-100">
+  <div class="m-4 text-right">
+    <%= link_to "Nová otázka", new_admin_question_path, class: "btn btn-primary" %>
+  </div>
+  <table class="table">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th></th>
+        <th>Otázka</th>
+        <th>Obtížnost</th>
+        <th>Zveřejněno</th>
+        <th>Upravit</th>
+        <th>Smazat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @questions.includes(:playthroughs_questions).each do |question| %>
+        <tr>
+          <th><%= question.id %></th>
+          <td><%= question.name %></td>
+          <td><%= question.level %></td>
+          <td><%= question.active ? "Ano" : "Ne" %></td>
+          <td><%= link_to "Upravit", edit_admin_question_path(question), class: "btn btn-secondary btn-sm" %></td>
+          <td>
+            <% if question.can_destroy? %>
+              <%= button_to "Smazat", admin_question_path(question), method: :delete, form: { data: { turbo_confirm: "Jste si jistí, že chcete smazat tuto otázku?" } }, class: "btn btn-danger btn-sm" %>
+            <% else %>
+              <div class="tooltip tooltip-left" data-tip="Otázka byla použita v probíhajících nebo dokončených hrách a nemůže být smazána.">
+                <button class="btn btn-danger btn-sm" disabled>Smazat</button>
+              </div>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

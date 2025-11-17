@@ -1,0 +1,9 @@
+<% content_for :title, "Nová otázka" %>
+
+<%= render "layouts/header" do %>
+  <div class="text-4xl">Nová otázka</div>
+<% end %>
+
+<section class="w-full mx-auto my-8 md:w-96">
+  <%= render "form", question: @question %>
+</section>

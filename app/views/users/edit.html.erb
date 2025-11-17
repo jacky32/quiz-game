@@ -1,29 +1,9 @@
+<% content_for :title, "Nastavení profilu" %>
 
-<div class="w-full mx-auto md:w-96">
-  <%= form_with model: @user, method: :patch do |form| %>
-    <fieldset class="p-4 border fieldset bg-base-200 border-base-300 rounded-box w-xs">
-      <h1 class="mb-4 text-4xl font-bold">Upravit profil</h1>
-      <%= image_tag "logo.png" %>
+<%= render "layouts/header" do %>
+  <div class="text-4xl">Nastavení profilu</div>
+<% end %>
 
-      <label class="label" for="avatar">Avatar</label>
-      <%= form.file_field :avatar, class: "file-input" %>
-
-      <label class="label" for="name">Jméno</label>
-      <%= form.text_field :name, required: true, autofocus: true, autocomplete: "nickname", placeholder: "Jméno", class: "input" %>
-
-      <label class="label" for="email_address">Email</label>
-      <%= form.email_field :email_address, required: true, autocomplete: "username", placeholder: "Email", class: "input" %>
-
-      <label class="label" for="password">Heslo</label>
-      <%= form.password_field :password, autocomplete: "new-password", placeholder: "Heslo", maxlength: 72, class: "input" %>
-
-      <label class="label" for="password">Potvrdit heslo</label>
-      <%= form.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Potvrdit heslo", maxlength: 72, class: "input" %>
-
-      <div class="flex justify-center gap-4">
-        <%= form.submit "Aktualizovat", class: "btn btn-primary mt-8 max-w-32 w-full" %>
-        <%= link_to "Zrušit", root_path, class: "btn btn-secondary mt-8 max-w-32 w-full" %>
-      </div>
-    </fieldset>
-  <% end %>
-</div>
+<section class="w-full mx-auto my-8 md:w-96">
+  <%= render "form", user: @user %>
+</section>

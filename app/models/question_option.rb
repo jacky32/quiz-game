@@ -6,7 +6,7 @@ class QuestionOption < ApplicationRecord
 
   scope :correct, -> { where(correct: true) }
   scope :incorrect, -> { where(correct: false) }
-  scope :random, -> { order("RANDOM()") }
+  scope :order_random, -> { order("RANDOM()") }
 
   def self.by_uuid(uuid)
     find_by(uuid: uuid)

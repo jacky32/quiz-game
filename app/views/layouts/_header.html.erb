@@ -1,0 +1,19 @@
+
+<section class="flex w-full">
+  <div class="flex flex-row items-center justify-center w-full h-48 gap-4 m-2 card bg-base-300 rounded-box">
+    <%= link_to root_path do %>
+      <%= image_tag "logo.png", class: "h-32" %>
+    <% end %>
+    </div>
+  <div class="flex flex-row items-center justify-center w-full h-48 gap-4 m-2 card bg-base-300 rounded-box">
+    <%= yield %>
+  </div>
+  <div class="flex flex-row items-center justify-center w-full h-48 gap-4 m-2 card bg-base-300 rounded-box">
+    <%= link_to edit_user_path(Current.user), class: "text-lg" do %>
+      <%= Current.user.name %>
+    <% end %>
+    <%= link_to edit_user_path(Current.user) do %>
+      <%= image_tag Current.user.avatar, class: "h-32 w-32 rounded-full" if Current.user.avatar.attached? %>
+    <% end %>
+  </div>
+</section>

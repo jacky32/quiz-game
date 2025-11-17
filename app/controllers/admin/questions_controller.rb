@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::BaseController
   before_action :set_question, only: %i[ show edit update destroy ]
 
   # GET /questions
@@ -13,6 +13,8 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
+    @question.build_correct_option
+    3.times { @question.incorrect_options.build }
   end
 
   # GET /questions/1/edit
@@ -22,10 +24,12 @@ class QuestionsController < ApplicationController
   # POST /questions
   def create
     @question = Question.new(question_params)
+    @question.creator = Current.user
 
-    if @question.save
-      redirect_to @question, notice: "Question was successfully created."
+    if @question.save!
+      redirect_to admin_questions_path, notice: "Otázka byla úspěšně vytvořena."
     else
+      flash.now[:alert] = "Něco se pokazilo. Zkontrolujte formulář."
       render :new, status: :unprocessable_content
     end
   end
@@ -33,8 +37,9 @@ class QuestionsController < ApplicationController
   # PATCH/PUT /questions/1
   def update
     if @question.update(question_params)
-      redirect_to @question, notice: "Question was successfully updated.", status: :see_other
+      redirect_to admin_questions_path, notice: "Otázka byla úspěšně upravena.", status: :see_other
     else
+      flash.now[:alert] = "Něco se pokazilo. Zkontrolujte formulář."
       render :edit, status: :unprocessable_content
     end
   end
@@ -42,7 +47,7 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1
   def destroy
     @question.destroy!
-    redirect_to questions_path, notice: "Question was successfully destroyed.", status: :see_other
+    redirect_to admin_questions_path, notice: "Úspěšně smazáno.", status: :see_other
   end
 
   private
@@ -53,6 +58,12 @@ class QuestionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def question_params
-      params.expect(question: [ :name, :body, :correct_answer, :wrong_answer1, :wrong_answer2, :wrong_answer3, :level, :hint ])
+      params.expect(question: [
+        :active,
+        :body,
+        :hint,
+        :level,
+        :name,
+        question_options_attributes: [ :id, :text, :correct ] ])
     end
 end

@@ -54,14 +54,14 @@ class Playthrough < ApplicationRecord
   end
 
   def use_fifty_hint
-    fifty_hint_question_option_id = current_question.question_options.incorrect.random.first.id
+    fifty_hint_question_option_id = current_question.question_options.incorrect.order_random.first.id
     current_playthroughs_question.update(fifty_hint_used: true, fifty_hint_question_option_id:)
   end
 
   def use_question_swap
     current_playthroughs_question.update(
       swapped_question: current_question,
-      question: Question.active.where.not(id: current_question.id).where(level: current_question.level).random.first,
+      question: Question.active.where.not(id: current_question.id).where(level: current_question.level).order_random.first,
       question_swap_used: true,
       disable_text_hint: true
     )
@@ -70,7 +70,18 @@ class Playthrough < ApplicationRecord
   private
 
   def generate_questions
-    Question.active.where(level: (1..10)).random.distinct(:level).limit(10).find_each do |question|
+    sql = <<-SQL
+      SELECT *
+      FROM (
+        SELECT *, ROW_NUMBER() OVER (PARTITION BY level ORDER BY RANDOM()) as rn
+        FROM questions
+        WHERE active = TRUE
+        AND level BETWEEN 1 AND 10
+      )
+      WHERE rn = 1
+      ORDER BY level
+    SQL
+    Question.find_by_sql(sql).each do |question|
       playthroughs_questions.build(question: question)
     end
   end

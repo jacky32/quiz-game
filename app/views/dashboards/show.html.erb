@@ -1,16 +1,16 @@
 <%# Header %>
 <section class="flex w-full">
-  <div class="card bg-base-300 rounded-box flex justify-center items-center  h-48 w-full  m-2">
+  <div class="flex items-center justify-center w-full h-48 m-2 card bg-base-300 rounded-box">
     <div class="text-xl font-semibold">Současné skóre: <%= Current.user.best_score %></div>
     <div class="text-lg">Pořadí v žebříčku: <%= Current.user.leaderboard_position %></div>
   </div>
 
-  <div class="card bg-base-300 rounded-box flex justify-center items-center h-72 w-full  m-2">
+  <div class="flex items-center justify-center w-full m-2 card bg-base-300 rounded-box h-72">
     <%= image_tag "logo.png", class: "h-48" %>
     <div class="text-2xl">Vítejte, <%= Current.user.name %>!</div>
   </div>
 
-  <div class="card bg-base-300 rounded-box flex h-48 w-full  m-2 flex-row justify-center items-center gap-4">
+  <div class="flex flex-row items-center justify-center w-full h-48 gap-4 m-2 card bg-base-300 rounded-box">
     <%= link_to edit_user_path(Current.user), class: "text-lg" do %>
       <%= Current.user.name %>
     <% end %>
@@ -23,23 +23,25 @@
 <%# Top players %>
 
 <section class="flex w-full h-auto ">
-  <div class="card bg-base-300 rounded-box flex w-full h-full min-h-96 m-2 flex-row justify-center items-center gap-4">
-    <ul class="list bg-base-100 rounded-box shadow-md">
-      <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Top hráči</li>
+  <div class="flex flex-row items-center justify-center w-full h-full gap-4 m-2 card bg-base-300 rounded-box min-h-96">
+    <ul class="w-full h-full m-4 shadow-md list bg-base-100 rounded-box">
+      <li class="p-4 pb-2 text-xs tracking-wide opacity-60">Top hráči</li>
 
-      <%= User.top_leaderboard.find_each.with_index(1) do |user, index| %>
+      <% User.top_leaderboard.each.with_index(1) do |user, index| %>
         <li class="list-row">
-          <div><%= index %>.</div>
-          <div><%= image_tag user.avatar, class: "size-10 rounded-box" if user.avatar.attached? %></div>
+          <div class="text-4xl font-thin opacity-30 tabular-nums"><%= index %></div>
           <div>
-            <div><%= user.name %></div>
-            <div class="text-xs uppercase font-semibold opacity-60"><%= user.best_score %></div>
+            <% if user.avatar.attached? %>
+              <%= image_tag user.avatar, class: "size-10 rounded-box" %>
+            <% end %>
           </div>
+          <div class="list-col-grow"><%= user.name %></div>
+          <div class="text-xs font-semibold uppercase opacity-60"><%= user.best_score %></div>
         </li>
       <% end %>
     </ul>
   </div>
-  <div class="card bg-base-300 rounded-box flex w-full  h-full min-h-96 m-2  justify-center items-center gap-4 flex-col">
+  <div class="flex flex-col items-center justify-center w-full h-full gap-4 m-2 card bg-base-300 rounded-box min-h-96">
     <div>Text - úvod</div>
     <%= link_to "Začít hru", playthroughs_path, class: "btn btn-primary" %>
     <div>Text - pravidla</div>

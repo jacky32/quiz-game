@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   resource :dashboard, only: :show
   root to: "dashboards#show"
 
+  namespace :admin do
+    resources :questions
+  end
+
   resources :registrations, except: %i[ index show destroy ]
   resource :session
   resources :passwords, param: :token

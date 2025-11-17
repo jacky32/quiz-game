@@ -1,0 +1,38 @@
+
+  <%= form_with model: [:admin, question] do |form| %>
+    <fieldset class="p-4 border fieldset bg-base-200 border-base-300 rounded-box w-xs">
+      <legend class="font-bold">Otázka</legend>
+
+      <label class="label" for="name">Název (pro administraci)</label>
+      <%= form.text_field :name, required: true, autofocus: true, placeholder: "Název", class: "input" %>
+
+      <label class="label" for="level">Úroveň (1-10)</label>
+      <%= form.number_field :level, in: 1..10, required: true, placeholder: "Úroveň", class: "input" %>
+
+      <label class="label" for="body">Obsah otázky</label>
+      <%= form.text_field :body, required: true, autofocus: true, placeholder: "Obsah otázky", class: "input" %>
+
+      <%= form.fields_for :correct_option do |question_option| %>
+        <label class="label" for="text">Správná odpověď</label>
+        <%= question_option.text_field :text, required: true, autofocus: true, placeholder: "Správná odpověď", class: "input input-success" %>
+      <% end %>
+
+      <%= form.fields_for :incorrect_options do |question_option| %>
+        <label class="label" for="text">Špatná odpověď</label>
+        <%= question_option.text_field :text, required: true, autofocus: true, placeholder: "Špatná odpověď", class: "input input-warning" %>
+      <% end %>
+
+      <label class="label" for="hint">Nápověda</label>
+      <%= form.text_area :hint, placeholder: "Nápověda", class: "textarea" %>
+
+      <label class="flex items-center justify-center mt-6 cursor-pointer label">
+        <%= form.check_box :active, class: "checkbox checkbox-primary" %>
+        <span class="label-text">Aktivní?</span>
+      </label>
+
+      <div class="flex justify-center gap-4">
+        <%= form.submit "Uložit", class: "btn btn-primary mt-8 max-w-32 w-full" %>
+        <%= link_to "Zrušit", admin_questions_path, class: "btn btn-secondary mt-8 max-w-32 w-full" %>
+      </div>
+    </fieldset>
+  <% end %>

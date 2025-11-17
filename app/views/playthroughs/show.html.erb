@@ -1,30 +1,18 @@
 <% content_for :title, "Showing playthrough" %>
 
-<section class="flex w-full">
-  <div class="flex flex-row items-center justify-center w-full h-48 gap-4 m-2 card bg-base-300 rounded-box">
-    <%= link_to root_path do %>
-      <%= image_tag "logo.png", class: "h-32" %>
-    <% end %>
-    </div>
-  <div class="flex flex-row items-center justify-center w-full h-48 gap-4 m-2 card bg-base-300 rounded-box">
-    Současné skóre: <span class="text-xl font-bold"><%= @playthrough.score || 0 %></span>
+<%= render "layouts/header" do %>
+  <div class="text-4xl">
+    Současné skóre: <span class="font-bold"><%= @playthrough.score || 0 %></span>
   </div>
-  <div class="flex flex-row items-center justify-center w-full h-48 gap-4 m-2 card bg-base-300 rounded-box">
-    <%= link_to edit_user_path(Current.user), class: "text-lg" do %>
-      <%= Current.user.name %>
-    <% end %>
-    <%= link_to edit_user_path(Current.user) do %>
-      <%= image_tag Current.user.avatar, class: "h-32 w-32 rounded-full" if Current.user.avatar.attached? %>
-    <% end %>
-  </div>
-</section>
+<% end %>
+
 <section class="grid grid-cols-5">
   <div class="grid w-full max-w-3xl grid-cols-2 col-span-4 grid-rows-4 gap-2 mx-auto">
     <div class="flex items-center justify-center col-span-2 text-2xl text-center">
       <%= @playthrough.current_question.body %>
     </div>
     <% fifty_hint_currently_used = @playthrough.current_playthroughs_question.fifty_hint_used? %>
-    <% @playthrough.current_question.question_options.random.each_with_index do |question_option, index| %>
+    <% @playthrough.current_question.question_options.order_random.each_with_index do |question_option, index| %>
       <% if !fifty_hint_currently_used || question_option.correct? || @playthrough.current_playthroughs_question.fifty_hint_question_option&.id == question_option&.id %>
         <%= form_with model: @playthrough, url: answer_question_playthroughs_path, method: :post do |f| %>
           <%= f.hidden_field :question_option_id, value: question_option.uuid %>
