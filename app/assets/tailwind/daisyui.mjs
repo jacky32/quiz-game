@@ -50,7 +50,7 @@ var pluginOptionsHandler = (() => {
     const {
       logs = true,
       root = ":root",
-      themes = ["light --default", "dark --prefersdark"],
+      themes = ["bumblebee --default", "bumblebee --prefersdark"],
       include,
       exclude,
       prefix = ""
@@ -70,7 +70,11 @@ var pluginOptionsHandler = (() => {
         addBase({ [selector]: theme });
         if (flags.includes("--prefersdark")) {
           const darkSelector = root === ":root" ? ":root:not([data-theme])" : `${root}:not([data-theme])`;
-          addBase({ "@media (prefers-color-scheme: dark)": { [darkSelector]: theme } });
+          addBase({
+            '@media (prefers-color-scheme: bumblebee)': {
+              [darkSelector]: theme,
+            },
+          });
         }
       }
     };

@@ -1,29 +1,31 @@
 <%# Header %>
-<section class="flex w-full">
-  <div class="flex items-center justify-center w-full h-48 m-2 card bg-base-300 rounded-box">
+<section class="grid grid-cols-3 grid-rows-2 w-full bg-base-200  ">
+  <div class="flex items-center justify-center w-full h-28 flex-col col-span-1 border-base-300 border-b-2 ">
     <div class="text-xl font-semibold">Současné skóre: <%= Current.user.total_score %></div>
     <div class="text-lg">Pořadí v žebříčku: <%= Current.user.leaderboard_position %></div>
   </div>
 
-  <div class="flex items-center justify-center w-full m-2 card bg-base-300 rounded-box h-72">
-    <%= image_tag "logo.png", class: "h-48" %>
+  <div class="flex items-center justify-center w-full flex-col row-span-2 border-base-300 border-b-2 ">
+    <%= image_tag "logo.png", class: "h-36" %>
     <div class="text-2xl">Vítejte, <%= Current.user.name %>!</div>
   </div>
 
-  <div class="flex flex-row items-center justify-center w-full h-48 gap-4 m-2 card bg-base-300 rounded-box">
+  <div class="flex flex-row items-center justify-center w-full h-28 gap-4 border-base-300 border-b-2 ">
     <%= link_to edit_user_path(Current.user), class: "text-lg" do %>
       <%= Current.user.name %>
     <% end %>
     <%= link_to edit_user_path(Current.user) do %>
-      <%= image_tag Current.user.avatar, class: "h-32 w-32 rounded-full" if Current.user.avatar.attached? %>
+      <%= image_tag Current.user.avatar, class: "h-24 w-24 rounded-full" if Current.user.avatar.attached? %>
     <% end %>
   </div>
+  <div class="bg-base-100 border-base-300 border-r-2"></div>
+  <div class="bg-base-100 border-base-300 border-l-2"></div>
 </section>
 
 <%# Top players %>
 
 <section class="flex w-full h-auto ">
-  <div class="flex flex-row items-center justify-center w-full h-full gap-4 m-2 card bg-base-300 rounded-box min-h-96">
+  <div class="flex flex-row items-center justify-center w-full h-full gap-4 m-2 card  rounded-box min-h-96">
     <ul class="w-full h-full m-4 shadow-md list bg-base-100 rounded-box">
       <li class="p-4 pb-2 text-xs tracking-wide opacity-60">Top hráči</li>
 
@@ -41,9 +43,9 @@
       <% end %>
     </ul>
   </div>
-  <div class="flex flex-col items-center justify-center w-full h-full gap-4 m-2 card bg-base-300 rounded-box min-h-96">
+  <div class="flex flex-col items-center justify-center w-full h-full gap-4 m-2 card  rounded-box min-h-96">
     <div>Text - úvod</div>
-    <%= link_to "Začít hru", playthroughs_path, class: "btn btn-primary" %>
+    <%= link_to Current.user.playthroughs.in_progress.any? ? "Pokračovat ve hře" : "Začít hru", playthroughs_path, class: "btn btn-primary" %>
     <div>Text - pravidla</div>
   </div>
 </section>
