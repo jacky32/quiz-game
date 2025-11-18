@@ -27,7 +27,7 @@ registry:
   server: registry.digitalocean.com
 
   # Needed for authenticated registries.
-  username: root
+  username: bropalion1@gmail.com
 
   # Always use an access token rather than real password when possible.
   password:
