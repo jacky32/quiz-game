@@ -24,7 +24,7 @@ proxy:
 # Where you keep your container images.
 registry:
   # Alternatives: hub.docker.com / registry.digitalocean.com / ghcr.io / ...
-  server: registry.digitalocean.com
+  server: registry.digitalocean.com/quiz-game
 
   # Needed for authenticated registries.
   username: bropalion1@gmail.com
