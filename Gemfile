@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby file: ".ruby-version"
+ruby "3.4.7" # file: ".ruby-version"
 
 gem "rails", "~> 8.1.0"
 gem "puma", ">= 5.0"
