@@ -21,8 +21,8 @@ class User < ApplicationRecord
   scope :top_leaderboard, lambda {
     joins(:playthroughs)
       .group("users.id")
-      .select("users.*, MAX(playthroughs.score) AS best_score")
-      .order("best_score DESC")
+      .select("users.*, SUM(playthroughs.score) AS total_score")
+      .order("total_score DESC")
       .limit(5)
   }
 
@@ -31,12 +31,16 @@ class User < ApplicationRecord
     playthroughs.maximum(:score) || 0
   end
 
+  def total_score
+    playthroughs.sum(:score) || 0
+  end
+
   def leaderboard_position
     User
       .joins(:playthroughs)
       .group("users.id")
-      .select("users.*, MAX(playthroughs.score)")
-      .order("MAX(playthroughs.score) DESC")
+      .select("users.*, SUM(playthroughs.score)")
+      .order("SUM(playthroughs.score) DESC")
       .pluck(:id)
       .index(id)
       &.+(1) || "-" # Convert zero-based index to one-based position
