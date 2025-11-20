@@ -31,7 +31,7 @@ class User < ApplicationRecord
     playthroughs.maximum(:score) || 0
   end
 
-  def total_score
+  def load_total_score
     playthroughs.sum(:score) || 0
   end
 

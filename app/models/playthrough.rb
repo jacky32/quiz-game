@@ -29,6 +29,8 @@ class Playthrough < ApplicationRecord
   validate :must_have_10_questions, on: :create
   validate :must_have_10_levels_of_questions, on: :create
 
+  after_update_commit -> { broadcast_update_later_to "leaderboard", partial: "dashboards/leaderboard", target: "leaderboard" }
+
   def text_hint_used?
     playthroughs_questions.where(text_hint_used: true).exists?
   end

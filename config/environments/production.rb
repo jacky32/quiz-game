@@ -12,6 +12,8 @@ Rails.application.configure do
   # Full error reports are disabled.
   config.consider_all_requests_local = false
 
+  routes.default_url_options = { host: "czu.broniek.eu" }
+
   # Turn on fragment caching in view templates.
   config.action_controller.perform_caching = true
 
