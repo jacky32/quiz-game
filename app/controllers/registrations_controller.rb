@@ -20,7 +20,7 @@ class RegistrationsController < ApplicationController
 
     if @user.save
       start_new_session_for @user
-      redirect_to after_authentication_url, notice: "Úspěšně jste se zaregistrovali."
+      redirect_to root_path, notice: "Úspěšně jste se zaregistrovali."
     else
       flash[:alert] = @user.errors.full_messages.to_sentence
       render :new, status: :unprocessable_entity

@@ -1,17 +1,17 @@
 <div class="mx-auto md:w-96 w-full mt-8">
   <%= form_with url: session_url do |form| %>
-    <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-      <h1 class="font-bold text-4xl mb-4">Přihlášení</h1>
-      <%= image_tag "logo.png" %>
+    <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4">
+      <h1 class="font-bold text-4xl mb-4 mx-auto">Přihlášení</h1>
+      <%= image_tag "logo.png", class: "max-w-xs  max-md:mx-auto" %>
       <%# <legend class="fieldset-legend">Přihlášení</legend> %>
-      <label class="label" for="email_address">Email</label>
-      <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Email", value: params[:email_address], class: "input" %>
+      <label class="label w-full" for="email_address">Email</label>
+      <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Email", value: params[:email_address], class: " w-full input" %>
 
-      <label class="label" for="password">Heslo</label>
-      <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Heslo", maxlength: 72, class: "input" %>
+      <label class="label w-full" for="password">Heslo</label>
+      <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Heslo", maxlength: 72, class: " w-full input" %>
 
       <div class="flex justify-center">
-        <%= form.submit "Přihlásit se", class: "btn btn-primary mt-8 max-w-48 w-full" %>
+        <%= form.submit "Přihlásit se", class: "btn btn-primary mt-8 md:max-w-48 w-full" %>
       </div>
       <div class=" mt-8 text-center text-sm text-gray-500 ">
         Nemáte účet? <%= link_to "Zaregistrujte se", new_registration_path, class: "text-gray-700 underline hover:no-underline" %>

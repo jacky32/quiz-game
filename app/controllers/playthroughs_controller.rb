@@ -2,6 +2,8 @@ class PlaythroughsController < ApplicationController
   before_action :set_playthrough
 
   def show
+    @playthrough_won = params[:won].present?
+    @playthrough_lost = params[:lost].present?
     @current_level = @playthrough.playthroughs_questions.answered.count + 1
   end
 
@@ -15,10 +17,9 @@ class PlaythroughsController < ApplicationController
     when :correct_answer
       redirect_to playthroughs_path, notice: "Správná odpověď!"
     when :finished
-      redirect_to root_path, notice: "Hra dokončena! Vaše konečné skóre je #{@playthrough.score}."
+      redirect_to playthroughs_path(won: true), notice: "Hra dokončena! Vaše konečné skóre je #{@playthrough.score}."
     when :incorrect_answer
-      # TODO: Zobrazit stranku s odpovedmi
-      redirect_to root_path, alert: "Špatná odpověď. Hra byla ukončena, vaše skóre je #{@playthrough.score}."
+      redirect_to playthroughs_path(lost: true), alert: "Špatná odpověď. Hra byla ukončena, vaše skóre je #{@playthrough.score}."
     end
   end
 
@@ -26,7 +27,7 @@ class PlaythroughsController < ApplicationController
     redirect_to playthroughs_path, alert: "Textová nápověda již byla použita." and return if @playthrough.text_hint_used?
 
     if @playthrough.use_text_hint
-      redirect_to playthroughs_path, notice: "Textová nápověda byla úspěšně použita."
+      redirect_to playthroughs_path, notice: "Textová nápověda byla úspěšně použita. Pro otevření klikněte na \"Otevřít nápovědu\"."
     else
       redirect_to playthroughs_path, alert: "Nepodařilo se použít textovou nápovědu."
     end

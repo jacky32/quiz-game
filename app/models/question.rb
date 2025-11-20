@@ -14,7 +14,7 @@ class Question < ApplicationRecord
   validate :must_have_one_correct_option
 
   scope :active, -> { where(active: true) }
-  scope :random, -> { order("RANDOM()") }
+  scope :order_random, -> { order("RANDOM()") }
 
   accepts_nested_attributes_for :correct_option, :incorrect_options
 

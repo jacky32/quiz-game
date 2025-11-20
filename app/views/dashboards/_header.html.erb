@@ -1,0 +1,39 @@
+<section class="grid grid-cols-1 grid-rows-2 md:grid-cols-3 md:grid-rows-2 w-full bg-base-200  ">
+  <div class="flex items-center justify-evenly md:justify-center w-full h-28 flex-row md:flex-col col-span-1 border-base-300 md:border-b-2 ">
+    <div class="text-lg md:text-xl font-semibold">Současné skóre: <%= Current.user.load_total_score %></div>
+    <div class="text-lg max-md:hidden">Pořadí v žebříčku: <%= Current.user.leaderboard_position %></div>
+    <div class="md:hidden">
+      <%= link_to edit_user_path(Current.user) do %>
+        <% if Current.user.avatar.attached? %>
+          <%= image_tag Current.user.avatar, class: "h-24 w-24 rounded-full" %>
+        <% else %>
+          <div class="h-24 w-24 rounded-full bg-gray-300 flex items-center justify-center text-3xl text-white">
+            <%= Current.user.name.first.upcase %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="flex items-center justify-center w-full flex-col md:row-span-2 border-base-300 md:border-b-2 ">
+    <%= image_tag "logo.png", class: "h-36 max-md:hidden" %>
+    <div class="text-2xl">Vítejte, <%= Current.user.name %>!</div>
+  </div>
+
+  <div class="hidden md:flex flex-row items-center justify-center w-full h-28 gap-4 border-base-300 border-b-2">
+    <%= link_to edit_user_path(Current.user), class: "text-lg" do %>
+      <%= Current.user.name %>
+    <% end %>
+    <%= link_to edit_user_path(Current.user) do %>
+      <% if Current.user.avatar.attached? %>
+        <%= image_tag Current.user.avatar, class: "h-24 w-24 rounded-full" %>
+      <% else %>
+        <div class="h-24 w-24 rounded-full bg-gray-300 flex items-center justify-center text-3xl text-white">
+          <%= Current.user.name.first.upcase %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="bg-base-100 border-base-300 border-r-2"></div>
+  <div class="bg-base-100 border-base-300 border-l-2"></div>
+</section>

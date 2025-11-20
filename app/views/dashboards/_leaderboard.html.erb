@@ -7,6 +7,10 @@
       <div>
         <% if user.avatar.attached? %>
           <%= image_tag user.avatar, class: "size-10 rounded-box" %>
+        <% else %>
+          <div class="size-10 rounded-box bg-gray-300 flex items-center justify-center text-3xl text-white">
+            <%= user.name.first.upcase %>
+          </div>
         <% end %>
       </div>
       <div class="list-col-grow"><%= user.name %></div>

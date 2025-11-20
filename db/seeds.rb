@@ -9,32 +9,27 @@
 #   end
 
 ActiveRecord::Base.transaction do
-  User.create! email_address: "admin@account.org", password: "adminADMIN123", password_confirmation: "adminADMIN123", role: :admin, name: "Administrator"
-
+  unless User.admin.exists?
+    User.create! email_address: "admin@account.org", password: "adminADMIN123", password_confirmation: "adminADMIN123", role: :admin, name: "Administrator"
+  end
   # Questions
 
-  5.times do |i|
-    (1..10).to_a.each do |level|
-      question = Question.new(
-        name: "Sample Question #{i + 1} Level #{level}",
-        body: "What is the answer to question #{i + 1} at level #{level}?",
-        level: level,
-        hint: "This is a hint for question #{i + 1} at level #{level}.",
-        active: true,
-        creator: User.first
-      )
+  questions = File.read(Rails.root.join("data", "questions.json"))
+  questions_data = JSON.parse(questions)
+  questions_data.each do |question|
+    db_question = Question.new(
+      name: question["question_name"],
+      body: question["question"],
+      level: question["level"],
+      hint: question["hint"],
+      active: true,
+      creator: User.first
+    )
 
-      # Create question options
-      4.times do |j|
-        question.question_options.build(
-          text: "Option #{j + 1} for question #{i + 1} at level #{level}",
-          correct: j == 0,
-          question: question
-        )
-      end
-      question.save!
-    end
+    db_question.question_options.build(text: question["correct_option"], correct: true, question: db_question)
+    db_question.question_options.build(text: question["incorrect_option1"], correct: false, question: db_question)
+    db_question.question_options.build(text: question["incorrect_option2"], correct: false, question: db_question)
+    db_question.question_options.build(text: question["incorrect_option3"], correct: false, question: db_question)
+    db_question.save!
   end
 end
-
-# TODO: Generate users, playthroughs to fill leaderboard

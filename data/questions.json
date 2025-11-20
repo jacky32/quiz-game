@@ -1,0 +1,1002 @@
+[
+  {
+    "question_name": "Barva trávy",
+    "question": "Jakou barvu má obvykle zdravá tráva?",
+    "correct_option": "Zelenou",
+    "incorrect_option1": "Modrou",
+    "incorrect_option2": "Červenou",
+    "incorrect_option3": "Fialovou",
+    "hint": "Je to barva lesů a luk.",
+    "level": 1
+  },
+  {
+    "question_name": "Zvuk kočky",
+    "question": "Jaké zvíře dělá 'Mňau'?",
+    "correct_option": "Kočka",
+    "incorrect_option1": "Pes",
+    "incorrect_option2": "Kráva",
+    "incorrect_option3": "Ovce",
+    "hint": "Chytá myši.",
+    "level": 1
+  },
+  {
+    "question_name": "Počet kol auta",
+    "question": "Kolik kol má standardní osobní automobil?",
+    "correct_option": "4",
+    "incorrect_option1": "2",
+    "incorrect_option2": "3",
+    "incorrect_option3": "5",
+    "hint": "Stejně jako nohou u židle.",
+    "level": 1
+  },
+  {
+    "question_name": "Sníh",
+    "question": "Z čeho je tvořen sníh?",
+    "correct_option": "Z vody",
+    "incorrect_option1": "Z cukru",
+    "incorrect_option2": "Z mouky",
+    "incorrect_option3": "Z bavlny",
+    "hint": "Když roztaje, je mokro.",
+    "level": 1
+  },
+  {
+    "question_name": "Otec a syn",
+    "question": "Kdo je synem tvého otce, ale není to tvůj bratr?",
+    "correct_option": "Já",
+    "incorrect_option1": "Strýc",
+    "incorrect_option2": "Dědeček",
+    "incorrect_option3": "Soused",
+    "hint": "Podívej se do zrcadla.",
+    "level": 1
+  },
+  {
+    "question_name": "Hlavní město ČR",
+    "question": "Které město je hlavním městem České republiky?",
+    "correct_option": "Praha",
+    "incorrect_option1": "Brno",
+    "incorrect_option2": "Ostrava",
+    "incorrect_option3": "Plzeň",
+    "hint": "Říká se mu stověžaté.",
+    "level": 2
+  },
+  {
+    "question_name": "Barvy vlajky ČR",
+    "question": "Která barva NENÍ na české státní vlajce?",
+    "correct_option": "Žlutá",
+    "incorrect_option1": "Červená",
+    "incorrect_option2": "Modrá",
+    "incorrect_option3": "Bílá",
+    "hint": "Naše vlajka má tři barvy, tato je barvou slunce.",
+    "level": 2
+  },
+  {
+    "question_name": "Fotbalový tým",
+    "question": "Kolik hráčů jednoho týmu je v základu na hřišti při fotbale?",
+    "correct_option": "11",
+    "incorrect_option1": "5",
+    "incorrect_option2": "7",
+    "incorrect_option3": "15",
+    "hint": "Je to víc než deset.",
+    "level": 2
+  },
+  {
+    "question_name": "Pohádka o perníkové chaloupce",
+    "question": "Kdo chtěl sníst Jeníčka a Mařenku?",
+    "correct_option": "Ježibaba",
+    "incorrect_option1": "Vlk",
+    "incorrect_option2": "Obr",
+    "incorrect_option3": "Drak",
+    "hint": "Bydlela v chaloupce z cukrovinek.",
+    "level": 2
+  },
+  {
+    "question_name": "Měsíc v roce",
+    "question": "Který měsíc je první v kalendářním roce?",
+    "correct_option": "Leden",
+    "incorrect_option1": "Prosinec",
+    "incorrect_option2": "Září",
+    "incorrect_option3": "Březen",
+    "hint": "Je po Silvestru.",
+    "level": 2
+  },
+  {
+    "question_name": "Sousedé ČR",
+    "question": "Který stát sousedí s Českou republikou na západě?",
+    "correct_option": "Německo",
+    "incorrect_option1": "Polsko",
+    "incorrect_option2": "Rakousko",
+    "incorrect_option3": "Slovensko",
+    "hint": "Mluví se tam německy a je to náš největší soused.",
+    "level": 3
+  },
+  {
+    "question_name": "Chemická značka vody",
+    "question": "Jaký je chemický vzorec vody?",
+    "correct_option": "H2O",
+    "incorrect_option1": "CO2",
+    "incorrect_option2": "O2",
+    "incorrect_option3": "NaCl",
+    "hint": "Dva vodíky, jeden kyslík.",
+    "level": 3
+  },
+  {
+    "question_name": "Lední hokej",
+    "question": "Jak se nazývá trest ve hokeji, kdy hráč musí na trestnou lavici?",
+    "correct_option": "Vyloučení",
+    "incorrect_option1": "Aut",
+    "incorrect_option2": "Ofsajd",
+    "incorrect_option3": "Penalta",
+    "hint": "Tým pak hraje v oslabení.",
+    "level": 3
+  },
+  {
+    "question_name": "Den učitelů",
+    "question": "Na čí počest se v ČR slaví Den učitelů?",
+    "correct_option": "Jan Amos Komenský",
+    "incorrect_option1": "Karel IV.",
+    "incorrect_option2": "Tomáš Garrigue Masaryk",
+    "incorrect_option3": "Božena Němcová",
+    "hint": "Učitel národů.",
+    "level": 3
+  },
+  {
+    "question_name": "Planeta",
+    "question": "Které planetě se říká Rudá planeta?",
+    "correct_option": "Mars",
+    "incorrect_option1": "Venuše",
+    "incorrect_option2": "Jupiter",
+    "incorrect_option3": "Saturn",
+    "hint": "Je to čtvrtá planeta od Slunce.",
+    "level": 3
+  },
+  {
+    "question_name": "Autor Harryho Pottera",
+    "question": "Kdo napsal sérii knih o Harrym Potterovi?",
+    "correct_option": "J. K. Rowlingová",
+    "incorrect_option1": "J. R. R. Tolkien",
+    "incorrect_option2": "Stephen King",
+    "incorrect_option3": "Agatha Christie",
+    "hint": "Je to britská spisovatelka.",
+    "level": 4
+  },
+  {
+    "question_name": "Nejvyšší hora světa",
+    "question": "Jak se jmenuje nejvyšší hora světa nad hladinou moře?",
+    "correct_option": "Mount Everest",
+    "incorrect_option1": "K2",
+    "incorrect_option2": "Kilimandžáro",
+    "incorrect_option3": "Mont Blanc",
+    "hint": "Leží v Himalájích.",
+    "level": 4
+  },
+  {
+    "question_name": "Vynález telefonu",
+    "question": "Kdo je tradičně považován za vynálezce telefonu?",
+    "correct_option": "Alexander Graham Bell",
+    "incorrect_option1": "Thomas Alva Edison",
+    "incorrect_option2": "Nikola Tesla",
+    "incorrect_option3": "Albert Einstein",
+    "hint": "Jeho příjmení v angličtině znamená zvonek.",
+    "level": 4
+  },
+  {
+    "question_name": "Olympijské hry",
+    "question": "Jak často se konají letní olympijské hry?",
+    "correct_option": "Jednou za 4 roky",
+    "incorrect_option1": "Každý rok",
+    "incorrect_option2": "Jednou za 2 roky",
+    "incorrect_option3": "Jednou za 5 let",
+    "hint": "Je to čtyřletý cyklus zvaný olympiáda.",
+    "level": 4
+  },
+  {
+    "question_name": "Česká hymna",
+    "question": "Jak se jmenuje česká státní hymna?",
+    "correct_option": "Kde domov můj",
+    "incorrect_option1": "Nad Tatrou sa blýska",
+    "incorrect_option2": "Vltava",
+    "incorrect_option3": "Slované se sjeli",
+    "hint": "Pochází z Fidlovačky.",
+    "level": 4
+  },
+  {
+    "question_name": "Měna Velké Británie",
+    "question": "Jaká je měna ve Velké Británii?",
+    "correct_option": "Libra šterlinků",
+    "incorrect_option1": "Euro",
+    "incorrect_option2": "Dolar",
+    "incorrect_option3": "Koruna",
+    "hint": "Není to Euro, ačkoliv je v Evropě.",
+    "level": 5
+  },
+  {
+    "question_name": "Počet krajů ČR",
+    "question": "Kolik má Česká republika krajů (včetně Prahy)?",
+    "correct_option": "14",
+    "incorrect_option1": "12",
+    "incorrect_option2": "10",
+    "incorrect_option3": "16",
+    "hint": "Je to o jedno méně než 15.",
+    "level": 5
+  },
+  {
+    "question_name": "Rychlost světla",
+    "question": "Jaká je přibližná rychlost světla ve vakuu?",
+    "correct_option": "300 000 km/s",
+    "incorrect_option1": "1 000 km/s",
+    "incorrect_option2": "340 m/s",
+    "incorrect_option3": "1 000 000 km/s",
+    "hint": "Je to nejvyšší možná rychlost.",
+    "level": 5
+  },
+  {
+    "question_name": "První člověk ve vesmíru",
+    "question": "Kdo byl prvním člověkem ve vesmíru?",
+    "correct_option": "Jurij Gagarin",
+    "incorrect_option1": "Neil Armstrong",
+    "incorrect_option2": "Vladimír Remek",
+    "incorrect_option3": "Buzz Aldrin",
+    "hint": "Byl to sovětský kosmonaut v roce 1961.",
+    "level": 5
+  },
+  {
+    "question_name": "Svatý Václav",
+    "question": "Kdy slavíme svátek svatého Václava (Den české státnosti)?",
+    "correct_option": "28. září",
+    "incorrect_option1": "28. října",
+    "incorrect_option2": "17. listopadu",
+    "incorrect_option3": "1. května",
+    "hint": "Je to na podzim, v září.",
+    "level": 5
+  },
+  {
+    "question_name": "Nejdelší řeka světa",
+    "question": "Která řeka je často uváděna jako nejdelší na světě (společně s Amazonkou)?",
+    "correct_option": "Nil",
+    "incorrect_option1": "Mississippi",
+    "incorrect_option2": "Jang-c’-ťiang",
+    "incorrect_option3": "Dunaj",
+    "hint": "Protéká Egyptem.",
+    "level": 5
+  },
+  {
+    "question_name": "Chemická značka zlata",
+    "question": "Jakou chemickou značku má zlato?",
+    "correct_option": "Au",
+    "incorrect_option1": "Ag",
+    "incorrect_option2": "Fe",
+    "incorrect_option3": "Gl",
+    "hint": "Z latinského Aurum.",
+    "level": 5
+  },
+  {
+    "question_name": "Titanic",
+    "question": "Ve kterém roce se potopil Titanic?",
+    "correct_option": "1912",
+    "incorrect_option1": "1905",
+    "incorrect_option2": "1920",
+    "incorrect_option3": "1898",
+    "hint": "Bylo to dva roky před začátkem 1. světové války.",
+    "level": 5
+  },
+  {
+    "question_name": "Mozart",
+    "question": "Které město je rodištěm Wolfganga Amadea Mozarta?",
+    "correct_option": "Salzburg",
+    "incorrect_option1": "Vídeň",
+    "incorrect_option2": "Praha",
+    "incorrect_option3": "Mnichov",
+    "hint": "Leží v Rakousku, blízko hranic s Německem.",
+    "level": 5
+  },
+  {
+    "question_name": "Doba oběhu Země",
+    "question": "Jak dlouho přibližně trvá Zemi oběhnout Slunce?",
+    "correct_option": "365,25 dne",
+    "incorrect_option1": "24 hodin",
+    "incorrect_option2": "30 dní",
+    "incorrect_option3": "12 měsíců přesně",
+    "hint": "Proto máme přestupné roky.",
+    "level": 5
+  },
+  {
+    "question_name": "Hlavní město Austrálie",
+    "question": "Jaké je hlavní město Austrálie?",
+    "correct_option": "Canberra",
+    "incorrect_option1": "Sydney",
+    "incorrect_option2": "Melbourne",
+    "incorrect_option3": "Perth",
+    "hint": "Není to ani Sydney, ani Melbourne.",
+    "level": 6
+  },
+  {
+    "question_name": "Počet kostí",
+    "question": "Kolik kostí má přibližně dospělý člověk?",
+    "correct_option": "206",
+    "incorrect_option1": "105",
+    "incorrect_option2": "350",
+    "incorrect_option3": "512",
+    "hint": "Je to číslo těsně nad 200.",
+    "level": 6
+  },
+  {
+    "question_name": "Vznik ČSR",
+    "question": "Datum vzniku samostatného Československa je:",
+    "correct_option": "28. října 1918",
+    "incorrect_option1": "1. ledna 1993",
+    "incorrect_option2": "17. listopadu 1989",
+    "incorrect_option3": "8. května 1945",
+    "hint": "Konec první světové války.",
+    "level": 6
+  },
+  {
+    "question_name": "Mona Lisa",
+    "question": "Ve kterém muzeu je vystavena Mona Lisa?",
+    "correct_option": "Louvre",
+    "incorrect_option1": "Prado",
+    "incorrect_option2": "Ermitáž",
+    "incorrect_option3": "Britské muzeum",
+    "hint": "Nachází se v Paříži.",
+    "level": 6
+  },
+  {
+    "question_name": "Největší oceán",
+    "question": "Který oceán je největší na Zemi?",
+    "correct_option": "Tichý oceán",
+    "incorrect_option1": "Atlantský oceán",
+    "incorrect_option2": "Indický oceán",
+    "incorrect_option3": "Severní ledový oceán",
+    "hint": "Říká se mu také Pacifik.",
+    "level": 6
+  },
+  {
+    "question_name": "Simpsonovi",
+    "question": "Jak se jmenuje tvůrce seriálu Simpsonovi?",
+    "correct_option": "Matt Groening",
+    "incorrect_option1": "Seth MacFarlane",
+    "incorrect_option2": "Walt Disney",
+    "incorrect_option3": "Hanna-Barbera",
+    "hint": "Jeho jméno je Matt.",
+    "level": 6
+  },
+  {
+    "question_name": "Bitva na Bílé hoře",
+    "question": "Ve kterém roce proběhla bitva na Bílé hoře?",
+    "correct_option": "1620",
+    "incorrect_option1": "1420",
+    "incorrect_option2": "1526",
+    "incorrect_option3": "1648",
+    "hint": "Bylo to na začátku třicetileté války.",
+    "level": 6
+  },
+  {
+    "question_name": "Penicilin",
+    "question": "Kdo objevil penicilin?",
+    "correct_option": "Alexander Fleming",
+    "incorrect_option1": "Louis Pasteur",
+    "incorrect_option2": "Marie Curie",
+    "incorrect_option3": "Robert Koch",
+    "hint": "Stalo se to náhodou díky plísni.",
+    "level": 6
+  },
+  {
+    "question_name": "Nejmenší stát",
+    "question": "Jaký je nejmenší uznávaný stát na světě?",
+    "correct_option": "Vatikán",
+    "incorrect_option1": "Monako",
+    "incorrect_option2": "San Marino",
+    "incorrect_option3": "Lichtenštejnsko",
+    "hint": "Sídlí zde papež.",
+    "level": 6
+  },
+  {
+    "question_name": "James Bond",
+    "question": "Kdo byl prvním představitelem Jamese Bonda ve filmu?",
+    "correct_option": "Sean Connery",
+    "incorrect_option1": "Roger Moore",
+    "incorrect_option2": "Pierce Brosnan",
+    "incorrect_option3": "Daniel Craig",
+    "hint": "Byl to skotský herec.",
+    "level": 6
+  },
+  {
+    "question_name": "Dramatik",
+    "question": "Které dílo nenapsal William Shakespeare?",
+    "correct_option": "Lakomec",
+    "incorrect_option1": "Hamlet",
+    "incorrect_option2": "Romeo a Julie",
+    "incorrect_option3": "Othello",
+    "hint": "Lakomce napsal Molière.",
+    "level": 7
+  },
+  {
+    "question_name": "Periodická tabulka",
+    "question": "Který prvek má v periodické tabulce značku 'K'?",
+    "correct_option": "Draslík",
+    "incorrect_option1": "Vápník",
+    "incorrect_option2": "Krypton",
+    "incorrect_option3": "Kobalt",
+    "hint": "Z latinského Kalium.",
+    "level": 7
+  },
+  {
+    "question_name": "Řecký bůh",
+    "question": "Kdo je ve starořecké mytologii bohem moří?",
+    "correct_option": "Poseidon",
+    "incorrect_option1": "Zeus",
+    "incorrect_option2": "Hádés",
+    "incorrect_option3": "Ares",
+    "hint": "Jeho římský ekvivalent je Neptun.",
+    "level": 7
+  },
+  {
+    "question_name": "Operace Anthropoid",
+    "question": "Jak se jmenovali parašutisté, kteří provedli atentát na Heydricha?",
+    "correct_option": "Gabčík a Kubiš",
+    "incorrect_option1": "Mašín a Balabán",
+    "incorrect_option2": "Opálka a Valčík",
+    "incorrect_option3": "Morávek a Tři králové",
+    "hint": "Jeden byl Slovák, druhý Čech.",
+    "level": 7
+  },
+  {
+    "question_name": "Soustava SI",
+    "question": "Co je základní jednotkou elektrického proudu?",
+    "correct_option": "Ampér",
+    "incorrect_option1": "Volt",
+    "incorrect_option2": "Watt",
+    "incorrect_option3": "Ohm",
+    "hint": "Značí se písmenem A.",
+    "level": 7
+  },
+  {
+    "question_name": "Hlavní město Kanady",
+    "question": "Jaké je hlavní město Kanady?",
+    "correct_option": "Ottawa",
+    "incorrect_option1": "Toronto",
+    "incorrect_option2": "Montreal",
+    "incorrect_option3": "Vancouver",
+    "hint": "Není to Toronto.",
+    "level": 7
+  },
+  {
+    "question_name": "Počet států USA",
+    "question": "Kolik států tvoří Spojené státy americké?",
+    "correct_option": "50",
+    "incorrect_option1": "52",
+    "incorrect_option2": "48",
+    "incorrect_option3": "51",
+    "hint": "Tolik je hvězd na vlajce.",
+    "level": 7
+  },
+  {
+    "question_name": "Nobelova cena",
+    "question": "Který Čech získal Nobelovu cenu za chemii?",
+    "correct_option": "Jaroslav Heyrovský",
+    "incorrect_option1": "Jaroslav Seifert",
+    "incorrect_option2": "Otto Wichterle",
+    "incorrect_option3": "Antonín Holý",
+    "hint": "Vynalezl polarografii.",
+    "level": 7
+  },
+  {
+    "question_name": "Hloubka moře",
+    "question": "Jak se jmenuje nejhlubší místo na Zemi?",
+    "correct_option": "Mariánský příkop",
+    "incorrect_option1": "Tonkinský záliv",
+    "incorrect_option2": "Portorický příkop",
+    "incorrect_option3": "Jávský příkop",
+    "hint": "Je v Tichém oceánu.",
+    "level": 7
+  },
+  {
+    "question_name": "Oscar",
+    "question": "Který český film získal Oscara za nejlepší cizojazyčný film v roce 1996?",
+    "correct_option": "Kolja",
+    "incorrect_option1": "Ostře sledované vlaky",
+    "incorrect_option2": "Musíme si pomáhat",
+    "incorrect_option3": "Obchod na korze",
+    "hint": "Režíroval ho Jan Svěrák.",
+    "level": 7
+  },
+  {
+    "question_name": "Šachy",
+    "question": "Kolik políček má šachovnice?",
+    "correct_option": "64",
+    "incorrect_option1": "32",
+    "incorrect_option2": "100",
+    "incorrect_option3": "81",
+    "hint": "8 krát 8.",
+    "level": 8
+  },
+  {
+    "question_name": "Internet",
+    "question": "Co znamená zkratka 'www'?",
+    "correct_option": "World Wide Web",
+    "incorrect_option1": "World Web Wide",
+    "incorrect_option2": "Wide World Web",
+    "incorrect_option3": "Web World Wide",
+    "hint": "Celosvětová pavučina.",
+    "level": 8
+  },
+  {
+    "question_name": "Malířství",
+    "question": "Kdo je autorem obrazu 'Výkřik'?",
+    "correct_option": "Edvard Munch",
+    "incorrect_option1": "Vincent van Gogh",
+    "incorrect_option2": "Gustav Klimt",
+    "incorrect_option3": "Salvador Dalí",
+    "hint": "Norský malíř.",
+    "level": 8
+  },
+  {
+    "question_name": "Planeta",
+    "question": "Která planeta Sluneční soustavy má nejvíce měsíců (k roku 2023)?",
+    "correct_option": "Saturn",
+    "incorrect_option1": "Jupiter",
+    "incorrect_option2": "Uran",
+    "incorrect_option3": "Neptun",
+    "hint": "Tato planeta je známá svými prstenci.",
+    "level": 8
+  },
+  {
+    "question_name": "Válka růží",
+    "question": "Mezi kterými rody probíhala v Anglii Válka růží?",
+    "correct_option": "Lancasterové a Yorkové",
+    "incorrect_option1": "Tudorovci a Stuartovci",
+    "incorrect_option2": "Habsburkové a Bourboni",
+    "incorrect_option3": "Windsorové a Hannoverové",
+    "hint": "Červená a bílá růže.",
+    "level": 8
+  },
+  {
+    "question_name": "DNA",
+    "question": "Jaký tvar má molekula DNA?",
+    "correct_option": "Dvojšroubovice",
+    "incorrect_option1": "Jednošroubovice",
+    "incorrect_option2": "Kruh",
+    "incorrect_option3": "Trojúhelník",
+    "hint": "Objevili to Watson a Crick.",
+    "level": 8
+  },
+  {
+    "question_name": "Prezident USA",
+    "question": "Který prezident USA zrušil otroctví?",
+    "correct_option": "Abraham Lincoln",
+    "incorrect_option1": "George Washington",
+    "incorrect_option2": "Thomas Jefferson",
+    "incorrect_option3": "Theodore Roosevelt",
+    "hint": "Vládl během občanské války.",
+    "level": 8
+  },
+  {
+    "question_name": "Bitcoin",
+    "question": "Kdo je považován za zakladatele Bitcoinu?",
+    "correct_option": "Satoshi Nakamoto",
+    "incorrect_option1": "Vitalik Buterin",
+    "incorrect_option2": "Elon Musk",
+    "incorrect_option3": "Mark Zuckerberg",
+    "hint": "Je to pseudonym.",
+    "level": 8
+  },
+  {
+    "question_name": "Pravěk",
+    "question": "Které období je starší?",
+    "correct_option": "Paleolit",
+    "incorrect_option1": "Neolit",
+    "incorrect_option2": "Eneolit",
+    "incorrect_option3": "Doba bronzová",
+    "hint": "Starší doba kamenná.",
+    "level": 8
+  },
+  {
+    "question_name": "Srdce",
+    "question": "Kolik dutin má lidské srdce?",
+    "correct_option": "4",
+    "incorrect_option1": "2",
+    "incorrect_option2": "3",
+    "incorrect_option3": "6",
+    "hint": "Dvě síně a dvě komory.",
+    "level": 8
+  },
+  {
+    "question_name": "Hlavní město Brazílie",
+    "question": "Jaké je hlavní město Brazílie?",
+    "correct_option": "Brasília",
+    "incorrect_option1": "Rio de Janeiro",
+    "incorrect_option2": "São Paulo",
+    "incorrect_option3": "Salvador",
+    "hint": "Není to Rio.",
+    "level": 9
+  },
+  {
+    "question_name": "Hudba",
+    "question": "Kolik symfonií napsal Ludwig van Beethoven?",
+    "correct_option": "9",
+    "incorrect_option1": "41",
+    "incorrect_option2": "104",
+    "incorrect_option3": "5",
+    "hint": "Poslední obsahuje Ódu na radost.",
+    "level": 9
+  },
+  {
+    "question_name": "Chemie",
+    "question": "Který plyn je v atmosféře Země nejvíce zastoupen?",
+    "correct_option": "Dusík",
+    "incorrect_option1": "Kyslík",
+    "incorrect_option2": "Oxid uhličitý",
+    "incorrect_option3": "Argon",
+    "hint": "Tvoří přibližně 78 % atmosféry.",
+    "level": 9
+  },
+  {
+    "question_name": "Literatura",
+    "question": "Kdo napsal román '1984'?",
+    "correct_option": "George Orwell",
+    "incorrect_option1": "Aldous Huxley",
+    "incorrect_option2": "Ray Bradbury",
+    "incorrect_option3": "Franz Kafka",
+    "hint": "Autor Farmy zvířat.",
+    "level": 9
+  },
+  {
+    "question_name": "Fyzika",
+    "question": "Kdo formuloval princip neurčitosti v kvantové fyzice?",
+    "correct_option": "Werner Heisenberg",
+    "incorrect_option1": "Erwin Schrödinger",
+    "incorrect_option2": "Niels Bohr",
+    "incorrect_option3": "Max Planck",
+    "hint": "Německý fyzik.",
+    "level": 9
+  },
+  {
+    "question_name": "Zeměpis",
+    "question": "Ve které zemi byste našli Machu Picchu?",
+    "correct_option": "Peru",
+    "incorrect_option1": "Mexiko",
+    "incorrect_option2": "Chile",
+    "incorrect_option3": "Bolívie",
+    "hint": "Říše Inků.",
+    "level": 9
+  },
+  {
+    "question_name": "Anatomie",
+    "question": "Kde v lidském těle se nachází nejmenší kost (třmínek)?",
+    "correct_option": "V uchu",
+    "incorrect_option1": "V nose",
+    "incorrect_option2": "V malíčku",
+    "incorrect_option3": "V oku",
+    "hint": "Ve středním uchu.",
+    "level": 9
+  },
+  {
+    "question_name": "Náboženství",
+    "question": "Jak se jmenuje posvátná kniha islámu?",
+    "correct_option": "Korán",
+    "incorrect_option1": "Tóra",
+    "incorrect_option2": "Védy",
+    "incorrect_option3": "Talmud",
+    "hint": "Byla zjevena Mohamedovi.",
+    "level": 9
+  },
+  {
+    "question_name": "Sport",
+    "question": "Ve kterém roce se konala první novodobá olympiáda?",
+    "correct_option": "1896",
+    "incorrect_option1": "1900",
+    "incorrect_option2": "1892",
+    "incorrect_option3": "1924",
+    "hint": "Bylo to v Aténách.",
+    "level": 9
+  },
+  {
+    "question_name": "Matematika",
+    "question": "Jak se nazývá číslo, které je dělitelné pouze jedničkou a sebou samým?",
+    "correct_option": "Prvočíslo",
+    "incorrect_option1": "Liché číslo",
+    "incorrect_option2": "Složené číslo",
+    "incorrect_option3": "Iracionální číslo",
+    "hint": "Například 2, 3, 5, 7...",
+    "level": 9
+  },
+  {
+    "question_name": "Kosmonautika",
+    "question": "Jak se jmenoval pilotní modul Apolla 11?",
+    "correct_option": "Columbia",
+    "incorrect_option1": "Eagle",
+    "incorrect_option2": "Challenger",
+    "incorrect_option3": "Discovery",
+    "hint": "Eagle byl lunární modul, tohle byla velitelská loď.",
+    "level": 10
+  },
+  {
+    "question_name": "Filosofie",
+    "question": "Který filosof řekl 'Vím, že nic nevím'?",
+    "correct_option": "Sókratés",
+    "incorrect_option1": "Platón",
+    "incorrect_option2": "Aristoteles",
+    "incorrect_option3": "Epikúros",
+    "hint": "Řecký filosof, učitel Platóna.",
+    "level": 10
+  },
+  {
+    "question_name": "Chemie - prvky",
+    "question": "Který chemický prvek má značku W?",
+    "correct_option": "Wolfram",
+    "incorrect_option1": "Vanad",
+    "incorrect_option2": "Vodík",
+    "incorrect_option3": "Xenon",
+    "hint": "Má nejvyšší teplotu tání ze všech kovů.",
+    "level": 10
+  },
+  {
+    "question_name": "Historie ČR",
+    "question": "Kdo nastoupil na český trůn po smrti Jiřího z Poděbrad?",
+    "correct_option": "Vladislav Jagellonský",
+    "incorrect_option1": "Matyáš Korvín",
+    "incorrect_option2": "Ludvík Jagellonský",
+    "incorrect_option3": "Ferdinand I. Habsburský",
+    "hint": "Byl z polského rodu.",
+    "level": 10
+  },
+  {
+    "question_name": "Geografie",
+    "question": "Kolik časových pásem má Rusko (od roku 2014)?",
+    "correct_option": "11",
+    "incorrect_option1": "9",
+    "incorrect_option2": "10",
+    "incorrect_option3": "12",
+    "hint": "Je to nejrozlehlejší stát světa.",
+    "level": 10
+  },
+  {
+    "question_name": "Biologie",
+    "question": "Jak se odborně nazývá červené krevní barvivo?",
+    "correct_option": "Hemoglobin",
+    "incorrect_option1": "Chlorofyl",
+    "incorrect_option2": "Melanin",
+    "incorrect_option3": "Keratin",
+    "hint": "Váže na sebe kyslík.",
+    "level": 10
+  },
+  {
+    "question_name": "Literatura",
+    "question": "Kdo je autorem eposu Ilias a Odyssea?",
+    "correct_option": "Homér",
+    "incorrect_option1": "Hésiodos",
+    "incorrect_option2": "Vergilius",
+    "incorrect_option3": "Sofoklés",
+    "hint": "Slepý řecký básník.",
+    "level": 10
+  },
+  {
+    "question_name": "Umění",
+    "question": "Ve kterém městě se nachází galerie Uffizi?",
+    "correct_option": "Florencie",
+    "incorrect_option1": "Řím",
+    "incorrect_option2": "Benátky",
+    "incorrect_option3": "Milán",
+    "hint": "Město v Toskánsku.",
+    "level": 10
+  },
+  {
+    "question_name": "Vynálezy",
+    "question": "Kdo vynalezl dynamit?",
+    "correct_option": "Alfred Nobel",
+    "incorrect_option1": "Guglielmo Marconi",
+    "incorrect_option2": "Wilhelm Röntgen",
+    "incorrect_option3": "Rudolf Diesel",
+    "hint": "Podle něj se jmenuje slavná cena.",
+    "level": 10
+  },
+  {
+    "question_name": "Astronomie",
+    "question": "Jak se jmenuje galaxie, která se srazí s Mléčnou dráhou za několik miliard let?",
+    "correct_option": "Andromeda",
+    "incorrect_option1": "Triangulum",
+    "incorrect_option2": "Magellanovo mračno",
+    "incorrect_option3": "Sombrero",
+    "hint": "Naše nejbližší velká spirální galaxie.",
+    "level": 10
+  },
+  {
+    "question_name": "Hlavní město Islandu",
+    "question": "Jak se jmenuje hlavní město Islandu?",
+    "correct_option": "Reykjavík",
+    "incorrect_option1": "Helsinky",
+    "incorrect_option2": "Nuuk",
+    "incorrect_option3": "Oslo",
+    "hint": "Nejsevernější hlavní město světa.",
+    "level": 6
+  },
+  {
+    "question_name": "Internetová doména",
+    "question": "Kterému státu patří internetová doména .sk?",
+    "correct_option": "Slovensko",
+    "incorrect_option1": "Slovinsko",
+    "incorrect_option2": "Srbsko",
+    "incorrect_option3": "Skotsko",
+    "hint": "Naši východní sousedé.",
+    "level": 3
+  },
+  {
+    "question_name": "Chemická značka železa",
+    "question": "Jakou chemickou značku má železo?",
+    "correct_option": "Fe",
+    "incorrect_option1": "Ze",
+    "incorrect_option2": "Ir",
+    "incorrect_option3": "Sn",
+    "hint": "Z latinského Ferrum.",
+    "level": 4
+  },
+  {
+    "question_name": "Nejdelší kost",
+    "question": "Která kost v lidském těle je nejdelší?",
+    "correct_option": "Stehenní kost",
+    "incorrect_option1": "Holenní kost",
+    "incorrect_option2": "Pažní kost",
+    "incorrect_option3": "Páteř",
+    "hint": "Je v noze.",
+    "level": 5
+  },
+  {
+    "question_name": "První žena v kosmu",
+    "question": "Jak se jmenovala první žena ve vesmíru?",
+    "correct_option": "Valentina Těreškovová",
+    "incorrect_option1": "Světlana Savická",
+    "incorrect_option2": "Sally Rideová",
+    "incorrect_option3": "Jelena Serovová",
+    "hint": "Letěla v roce 1963.",
+    "level": 8
+  },
+  {
+    "question_name": "Rychlost zvuku",
+    "question": "Jaká je přibližně rychlost zvuku ve vzduchu (při 20 °C)?",
+    "correct_option": "343 m/s",
+    "incorrect_option1": "300 000 km/s",
+    "incorrect_option2": "120 km/h",
+    "incorrect_option3": "1000 m/s",
+    "hint": "Je to asi 1235 km/h, říká se tomu Mach 1.",
+    "level": 7
+  },
+  {
+    "question_name": "Hlavní město Turecka",
+    "question": "Jaké je hlavní město Turecka?",
+    "correct_option": "Ankara",
+    "incorrect_option1": "Istanbul",
+    "incorrect_option2": "Antalya",
+    "incorrect_option3": "Izmir",
+    "hint": "Není to největší město Istanbul.",
+    "level": 7
+  },
+  {
+    "question_name": "Římské číslice",
+    "question": "Jaké číslo vyjadřuje římská číslice M?",
+    "correct_option": "1000",
+    "incorrect_option1": "100",
+    "incorrect_option2": "500",
+    "incorrect_option3": "10000",
+    "hint": "Mille.",
+    "level": 4
+  },
+  {
+    "question_name": "Autor Pána prstenů",
+    "question": "Kdo napsal trilogii Pán prstenů?",
+    "correct_option": "J. R. R. Tolkien",
+    "incorrect_option1": "C. S. Lewis",
+    "incorrect_option2": "George R. R. Martin",
+    "incorrect_option3": "Terry Pratchett",
+    "hint": "Byl to profesor angličtiny v Oxfordu.",
+    "level": 5
+  },
+  {
+    "question_name": "Vlajka EU",
+    "question": "Kolik hvězd je na vlajce Evropské unie?",
+    "correct_option": "12",
+    "incorrect_option1": "15",
+    "incorrect_option2": "27",
+    "incorrect_option3": "10",
+    "hint": "Číslo symbolizuje dokonalost a úplnost, nemění se s počtem členů.",
+    "level": 6
+  },
+  {
+    "question_name": "Měna Japonska",
+    "question": "Jak se jmenuje měna v Japonsku?",
+    "correct_option": "Jen",
+    "incorrect_option1": "Juan",
+    "incorrect_option2": "Won",
+    "incorrect_option3": "Baht",
+    "hint": "Zkratka JPY.",
+    "level": 6
+  },
+  {
+    "question_name": "Skladatel Vltavy",
+    "question": "Kdo složil symfonickou báseň Vltava?",
+    "correct_option": "Bedřich Smetana",
+    "incorrect_option1": "Antonín Dvořák",
+    "incorrect_option2": "Leoš Janáček",
+    "incorrect_option3": "Bohuslav Martinů",
+    "hint": "Je součástí cyklu Má vlast.",
+    "level": 4
+  },
+  {
+    "question_name": "Největší savec",
+    "question": "Jaký je největší žijící savec na světě?",
+    "correct_option": "Plejtvák obrovský",
+    "incorrect_option1": "Slon africký",
+    "incorrect_option2": "Vorvaň obrovský",
+    "incorrect_option3": "Žralok velrybí",
+    "hint": "Žije v oceánu a váží až 190 tun.",
+    "level": 4
+  },
+  {
+    "question_name": "První prezident USA",
+    "question": "Kdo byl prvním prezidentem USA?",
+    "correct_option": "George Washington",
+    "incorrect_option1": "Thomas Jefferson",
+    "incorrect_option2": "Benjamin Franklin",
+    "incorrect_option3": "John Adams",
+    "hint": "Jeho tvář je na jednodolarové bankovce.",
+    "level": 5
+  },
+  {
+    "question_name": "Hlavní město Polska",
+    "question": "Jaké je hlavní město Polska?",
+    "correct_option": "Varšava",
+    "incorrect_option1": "Krakov",
+    "incorrect_option2": "Vratislav",
+    "incorrect_option3": "Gdaňsk",
+    "hint": "Polsky Warszawa.",
+    "level": 3
+  },
+  {
+    "question_name": "Bod varu",
+    "question": "Při kolika stupních Celsia vře voda (za normálního tlaku)?",
+    "correct_option": "100",
+    "incorrect_option1": "90",
+    "incorrect_option2": "110",
+    "incorrect_option3": "0",
+    "hint": "Je to o sto víc než bod mrazu.",
+    "level": 2
+  },
+  {
+    "question_name": "Nejrychlejší zvíře",
+    "question": "Které suchozemské zvíře je nejrychlejší?",
+    "correct_option": "Gepard",
+    "incorrect_option1": "Lev",
+    "incorrect_option2": "Kůň",
+    "incorrect_option3": "Antilopa",
+    "hint": "Kočkovitá šelma s tečkami.",
+    "level": 3
+  },
+  {
+    "question_name": "Kontinenty",
+    "question": "Kolik je na Zemi kontinentů (podle tradičního českého dělení)?",
+    "correct_option": "7",
+    "incorrect_option1": "5",
+    "incorrect_option2": "6",
+    "incorrect_option3": "4",
+    "hint": "Evropa, Asie, Afrika, Sev. Amerika, Již. Amerika, Austrálie, Antarktida.",
+    "level": 4
+  },
+  {
+    "question_name": "Pyramidy",
+    "question": "Kde se nacházejí pyramidy v Gíze?",
+    "correct_option": "Egypt",
+    "incorrect_option1": "Mexiko",
+    "incorrect_option2": "Peru",
+    "incorrect_option3": "Indie",
+    "hint": "Země faraonů.",
+    "level": 2
+  },
+  {
+    "question_name": "Bible",
+    "question": "Jak se jmenují první dva lidé podle Bible?",
+    "correct_option": "Adam a Eva",
+    "incorrect_option1": "Kain a Ábel",
+    "incorrect_option2": "Josef a Marie",
+    "incorrect_option3": "David a Goliáš",
+    "hint": "Žili v ráji.",
+    "level": 2
+  }
+]

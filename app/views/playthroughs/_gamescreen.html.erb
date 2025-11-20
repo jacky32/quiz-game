@@ -1,0 +1,76 @@
+
+<section class="flex flex-col md:grid md:grid-cols-5">
+  <div class="flex flex-col md:grid w-full max-md:h-full max-w-3xl grid-cols-1 md:grid-cols-2 col-span-1 md:col-span-4 grid-rows-6 md:grid-rows-4 gap-2 mx-auto">
+    <div class="flex items-center max-md:my-4 justify-center col-span-1 md:col-span-2 text-2xl text-center">
+      <%= @playthrough.current_question.body %>
+    </div>
+    <% fifty_hint_currently_used = @playthrough.current_playthroughs_question.fifty_hint_used? %>
+    <% @playthrough.current_question.question_options.order_random.each_with_index do |question_option, index| %>
+      <% if !fifty_hint_currently_used || question_option.correct? || @playthrough.current_playthroughs_question.fifty_hint_question_option&.id == question_option&.id %>
+        <%= form_with model: @playthrough, url: answer_question_playthroughs_path, method: :post do |f| %>
+          <%= f.hidden_field :question_option_id, value: question_option.uuid %>
+          <%= f.submit "#{('A'..'D').each_with_index.to_h.invert[index]}: #{question_option.text}", class: "btn btn-primary max-md:py-8 w-full h-full" %>
+        <% end %>
+      <% else %>
+          <%= link_to "#{('A'..'D').each_with_index.to_h.invert[index]}: #{question_option.text}", "#", class: "btn btn-primary w-full max-md:py-8 h-full btn-disabled", disabled: true %>
+      <% end %>
+    <% end %>
+    <div class="grid items-center justify-center grid-cols-3 col-span-2 gap-2">
+      <div class="w-full h-full">
+        <% if @playthrough.current_playthroughs_question.text_hint_used? && !@playthrough.current_playthroughs_question.disable_text_hint? %>
+          <button class="w-full h-full btn btn-secondary max-md:py-8" onclick="hint_modal.showModal()">Otevřít nápovědu</button>
+        <% elsif @playthrough.text_hint_used? %>
+          <%= link_to "Nápověda", "#", class: "btn btn-secondary max-md:py-8 btn-sm btn-disabled w-full h-full", disabled: true %>
+        <% else %>
+          <%= form_with model: @playthrough, url: use_text_hint_playthroughs_path, method: :post, class: "h-full w-full" do |f| %>
+            <%= f.submit "Nápověda", class: "btn btn-secondary max-md:py-8 btn-sm w-full h-full" %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="w-full h-full">
+        <% if @playthrough.fifty_hint_used? %>
+          <%= link_to "50:50", "#", class: "btn btn-secondary max-md:py-8 btn-sm btn-disabled w-full h-full", disabled: true %>
+        <% else %>
+          <%= form_with model: @playthrough, url: use_fifty_hint_playthroughs_path, method: :post, class: "h-full w-full" do |f| %>
+            <%= f.submit "50:50", class: "btn btn-secondary max-md:py-8 btn-sm w-full h-full" %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="w-full h-full">
+        <% if @playthrough.question_swap_used? %>
+          <%= link_to "Vyměnit otázku", "#", class: "btn btn-secondary max-md:py-8 btn-sm btn-disabled w-full h-full", disabled: true %>
+        <% else %>
+          <%= form_with model: @playthrough, url: use_question_swap_playthroughs_path, method: :post, class: "h-full w-full" do |f| %>
+            <%= f.submit "Vyměnit otázku", class: "btn btn-secondary max-md:py-8 btn-sm w-full h-full" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-1 hidden md:block">
+    <ul class="steps steps-vertical steps-reverse">
+      <% (1..10).to_a.each do |level| %>
+        <li class="step <%= @current_level > (11 - level) ? "step-primary" : "" %>">
+          <%= Playthrough::SCORE_BY_LEVEL[11 - level] %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class=" md:hidden col-span-1 mt-4">
+    <progress class="progress progress-success w-full" value="<%= (@current_level - 1) * 10 %>" max="100"></progress>
+    <div class="text-lg font-bold text-center">Skóre</div>
+</section>
+
+<% if @playthrough.current_playthroughs_question.text_hint_used? && !@playthrough.current_playthroughs_question.disable_text_hint? %>
+  <dialog id="hint_modal" class="modal">
+    <div class="modal-box">
+      <h3 class="text-lg font-bold">Nápověda</h3>
+      <p class="py-4"><%= @playthrough.current_question.hint %></p>
+      <div class="modal-action">
+        <form method="dialog">
+          <button class="btn">Zavřít</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
+<% end %>

@@ -12,8 +12,12 @@
     <%= link_to edit_user_path(Current.user), class: "text-lg" do %>
       <%= Current.user.name %>
     <% end %>
-    <%= link_to edit_user_path(Current.user) do %>
-      <%= image_tag Current.user.avatar, class: "h-24 w-24 rounded-full" if Current.user.avatar.attached? %>
+    <% if Current.user.avatar.attached? %>
+      <%= image_tag Current.user.avatar, class: "h-24 w-24 rounded-full" %>
+    <% else %>
+      <div class="h-24 w-24 rounded-full cursor-pointer bg-gray-300 flex items-center justify-center text-3xl text-white">
+        <%= Current.user.name.first.upcase %>
+      </div>
     <% end %>
   </div>
 </section>

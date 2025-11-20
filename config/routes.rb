@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resource :dashboard, only: :show
-  root to: "dashboards#show"
+  resource :public, only: :show
+  root to: "publics#show"
 
   namespace :admin do
     resources :questions
