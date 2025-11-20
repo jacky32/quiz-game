@@ -1,38 +1,41 @@
-
-  <%= form_with model: user, method: :patch, class: "w-full" do |form| %>
-    <fieldset class="p-4 border fieldset bg-base-200 w-full border-base-300 rounded-box mx-auto">
-      <h1 class="mb-4 text-4xl font-bold">Upravit profil</h1>
-      <% if Current.user.avatar.attached? %>
-        <%= image_tag Current.user.avatar, class: "h-24 w-24 rounded-full mx-auto" %>
-      <% else %>
-        <div class="h-24 w-24 rounded-full bg-gray-300 flex items-center justify-center text-3xl text-white mx-auto">
-          <%= Current.user.name.first.upcase %>
-        </div>
-      <% end %>
-
-      <label class="label" for="avatar">Avatar</label>
-      <%= form.file_field :avatar, class: "file-input w-full" %>
-
-      <label class="label" for="name">Jméno</label>
-      <%= form.text_field :name, required: true, autofocus: true, autocomplete: "nickname", placeholder: "Jméno", class: "input w-full" %>
-
-      <label class="label" for="email_address">Email</label>
-      <%= form.email_field :email_address, required: true, autocomplete: "username", placeholder: "Email", class: "input w-full" %>
-
-      <label class="label" for="password">Heslo</label>
-      <%= form.password_field :password, autocomplete: "new-password", placeholder: "Heslo", maxlength: 72, class: "input w-full" %>
-
-      <label class="label" for="password">Potvrdit heslo</label>
-      <%= form.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Potvrdit heslo", maxlength: 72, class: "input w-full" %>
-
-      <div class="flex justify-center gap-4">
-        <%= form.submit "Aktualizovat", class: "btn btn-primary mt-8 max-w-32 w-full" %>
-        <%= link_to "Zrušit", root_path, class: "btn btn-secondary mt-8 max-w-32 w-full" %>
+<%= form_with model: user, method: :patch, class: "w-full" do |form| %>
+  <fieldset class="p-4 border fieldset bg-base-200 w-full border-base-300 rounded-box mx-auto">
+    <h1 class="mb-4 text-4xl font-bold">Upravit profil</h1>
+    <% if Current.user.avatar.attached? %>
+      <%= image_tag Current.user.avatar, class: "h-24 w-24 rounded-full mx-auto" %>
+    <% else %>
+      <div class="h-24 w-24 rounded-full bg-gray-300 flex items-center justify-center text-3xl text-white mx-auto">
+        <%= Current.user.name.first.upcase %>
       </div>
-      <% if Current.user.admin? %>
-        <div class="flex justify-center gap-4">
-          <%= link_to "Upravit otázky", admin_questions_path, class: "btn btn-secondary mt-8 max-w-64 w-full" %>
-        </div>
-      <% end %>
-    </fieldset>
-  <% end %>
+    <% end %>
+
+    <label class="label" for="avatar">Avatar</label>
+    <%= form.file_field :avatar, class: "file-input w-full" %>
+
+    <label class="label" for="name">Jméno</label>
+    <%= form.text_field :name, required: true, autofocus: true, autocomplete: "nickname", placeholder: "Jméno", class: "input w-full" %>
+
+    <label class="label" for="email_address">Email</label>
+    <%= form.email_field :email_address, required: true, autocomplete: "username", placeholder: "Email", class: "input w-full" %>
+
+    <label class="label" for="password">Heslo</label>
+    <%= form.password_field :password, autocomplete: "new-password", placeholder: "Heslo", maxlength: 72, class: "input w-full" %>
+
+    <label class="label" for="password">Potvrdit heslo</label>
+    <%= form.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Potvrdit heslo", maxlength: 72, class: "input w-full" %>
+
+    <div class="flex justify-center gap-4">
+      <%= form.submit "Aktualizovat", class: "btn btn-primary mt-8 max-w-32 w-full" %>
+      <%= link_to "Zrušit", root_path, class: "btn btn-secondary mt-8 max-w-32 w-full" %>
+    </div>
+    <% if Current.user.admin? %>
+      <div class="flex justify-center gap-4">
+        <%= link_to "Upravit otázky", admin_questions_path, class: "btn btn-secondary mt-8 max-w-64 w-full" %>
+      </div>
+    <% end %>
+  </fieldset>
+<% end %>
+
+<div class="flex justify-center gap-4">
+  <%= button_to "Odhlásit se", session_path, method: :delete, class: "btn btn-error mt-8 max-w-64 w-full" %>
+</div>
