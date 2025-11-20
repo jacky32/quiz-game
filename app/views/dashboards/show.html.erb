@@ -10,7 +10,7 @@
   <% end %>
   <div class="flex flex-col items-center justify-center w-full h-full gap-4 m-2 card rounded-box min-h-96 shadow-md p-4 list bg-base-100">
     <div class="text-lg">Chcete být milionářem?</div>
-    <%= link_to Current.user.playthroughs.in_progress.any? ? "Pokračovat ve hře" : "Začít hru", playthroughs_path, class: "btn btn-primary" %>
+    <%= link_to Current.user.playthroughs.in_progress.where.not(score: 0).any? ? "Pokračovat ve hře" : "Začít hru", playthroughs_path, class: "btn btn-primary" %>
     <div class="text-md">Hra je postavena na klasickém formátu vědomostní pyramidy, kde hráč postupuje sérií otázek s rostoucí obtížností a bodovou hodnotou. U každé otázky má výběr ze čtyř možností s jednou správnou odpovědí. K dispozici má tři různé nápovědy: 50:50 která vyřadí dvě špatné odpovědi, nápověda, která zobrazí nápovědu k otázce a možnost výměny otázky za jinou. Každá nápověda může být využita pouze jednou za hru. </div>
   </div>
 </section>
