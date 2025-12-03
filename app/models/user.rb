@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :password, confirmation: true, if: -> { new_record? || changes[:password_digest] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:password_digest] }
   validates :email_address, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :name, presence: true
+  validates :name, presence: true, length: { minimum: 3, maximum: 24 }
 
   validate :acceptable_avatar_size
 
