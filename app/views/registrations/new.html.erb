@@ -6,10 +6,10 @@
       <%= image_tag "logo.png", class: "max-w-xs  max-md:mx-auto" %>
 
       <label class="w-full label" for="name">Jméno</label>
-      <%= form.text_field :name, required: true, autofocus: true, autocomplete: "nickname", placeholder: "Jméno", value: params[:name], class: "w-full input" %>
+      <%= form.text_field :name, required: true, autofocus: true, autocomplete: "nickname", placeholder: "Jméno", class: "w-full input" %>
 
       <label class="w-full label" for="email_address">Email</label>
-      <%= form.email_field :email_address, required: true, autocomplete: "username", placeholder: "Email", value: params[:email_address], class: "w-full input" %>
+      <%= form.email_field :email_address, required: true, autocomplete: "username", placeholder: "Email", class: "w-full input" %>
 
       <label class="w-full label" for="password">Heslo</label>
       <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Heslo", maxlength: 72, class: "w-full input" %>
