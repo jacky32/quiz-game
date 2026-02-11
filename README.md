@@ -1,4 +1,4 @@
-Aplikace je dostupná na <https:/czu.broniek.eu>, zdrojový kód na <https://github.com/jacky32/quiz-game>.
+Aplikace je dostupná na <https://czu.broniek.eu>, zdrojový kód na <https://github.com/jacky32/quiz-game>.
 
 Aplikace je napsána v Ruby on Rails frameworku, funguje jako monolith aplikace. To znamená, že nemá striktně oddělený frontend a backend, ale oboje spravuje jeden server. Frontend je pak psán s pomocí TailwindCSS a pluginem DaisyUI, který zjednodušuje stylování pomocí předdefinovaných komponent.
 
