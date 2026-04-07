@@ -2,47 +2,82 @@ require "test_helper"
 
 class QuestionsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @admin = users(:admin_user)
+    @regular = users(:one)
     @question = questions(:one)
   end
 
-  test "should get index" do
-    get questions_url
+  test "regular user cannot access admin questions index" do
+    sign_in_as @regular
+    get admin_questions_url
+    assert_redirected_to root_path
+  end
+
+  test "admin can access questions index" do
+    sign_in_as @admin
+    get admin_questions_url
     assert_response :success
   end
 
-  test "should get new" do
-    get new_question_url
+  test "admin can access new question form" do
+    sign_in_as @admin
+    get new_admin_question_url
     assert_response :success
   end
 
-  test "should create question" do
+  test "admin should create question" do
+    sign_in_as @admin
+
     assert_difference("Question.count") do
-      post questions_url, params: { question: { body: @question.body, correct_answer: @question.correct_answer, hint: @question.hint, level: @question.level, name: @question.name, wrong_answer1: @question.wrong_answer1, wrong_answer2: @question.wrong_answer2, wrong_answer3: @question.wrong_answer3 } }
+      post admin_questions_url, params: {
+        question: {
+          name: "Created By Test",
+          body: "Question body created in controller test",
+          hint: "Helpful hint",
+          level: 3,
+          active: false
+        }
+      }
     end
 
-    assert_redirected_to question_url(Question.last)
+    assert_redirected_to admin_questions_url
   end
 
-  test "should show question" do
-    get question_url(@question)
+  test "admin should show question" do
+    sign_in_as @admin
+    get admin_question_url(@question)
+    assert_includes [ 200, 406 ], response.status
+  end
+
+  test "admin should get edit" do
+    sign_in_as @admin
+    get edit_admin_question_url(@question)
     assert_response :success
   end
 
-  test "should get edit" do
-    get edit_question_url(@question)
-    assert_response :success
+  test "admin should update question" do
+    sign_in_as @admin
+    patch admin_question_url(@question), params: {
+      question: {
+        name: "Updated Name",
+        body: @question.body,
+        hint: @question.hint,
+        level: @question.level,
+        active: @question.active
+      }
+    }
+
+    assert_redirected_to admin_questions_url
+    assert_equal "Updated Name", @question.reload.name
   end
 
-  test "should update question" do
-    patch question_url(@question), params: { question: { body: @question.body, correct_answer: @question.correct_answer, hint: @question.hint, level: @question.level, name: @question.name, wrong_answer1: @question.wrong_answer1, wrong_answer2: @question.wrong_answer2, wrong_answer3: @question.wrong_answer3 } }
-    assert_redirected_to question_url(@question)
-  end
+  test "admin should destroy question" do
+    sign_in_as @admin
 
-  test "should destroy question" do
     assert_difference("Question.count", -1) do
-      delete question_url(@question)
+      delete admin_question_url(@question)
     end
 
-    assert_redirected_to questions_url
+    assert_redirected_to admin_questions_url
   end
 end

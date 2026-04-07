@@ -2,10 +2,24 @@
 
 one:
   question: one
-  text: MyString
-  correct: false
+  uuid: 550e8400-e29b-41d4-a716-446655440001
+  text: First Option
+  correct: true
 
 two:
+  question: one
+  uuid: 550e8400-e29b-41d4-a716-446655440002
+  text: Second Option
+  correct: false
+
+three:
   question: two
-  text: MyString
+  uuid: 550e8400-e29b-41d4-a716-446655440003
+  text: Correct Answer
+  correct: true
+
+four:
+  question: two
+  uuid: 550e8400-e29b-41d4-a716-446655440004
+  text: Wrong Answer
   correct: false

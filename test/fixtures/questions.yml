@@ -1,21 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  body: MyText
-  correct_answer: MyText
-  wrong_answer1: MyText
-  wrong_answer2: MyText
-  wrong_answer3: MyText
+  name: Test Question One
+  body: What is the answer to this test question?
   level: 1
-  hint: MyText
+  hint: This is a hint for the first question
+  active: true
+  creator: one
 
 two:
-  name: MyString
-  body: MyText
-  correct_answer: MyText
-  wrong_answer1: MyText
-  wrong_answer2: MyText
-  wrong_answer3: MyText
-  level: 1
-  hint: MyText
+  name: Test Question Two
+  body: What is the answer to this second test question?
+  level: 5
+  hint: This is a hint for the second question
+  active: true
+  creator: one

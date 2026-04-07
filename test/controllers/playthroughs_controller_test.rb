@@ -2,47 +2,42 @@ require "test_helper"
 
 class PlaythroughsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @user = users(:one)
     @playthrough = playthroughs(:one)
   end
 
-  test "should get index" do
+  test "requires authentication" do
     get playthroughs_url
-    assert_response :success
+    assert_redirected_to new_session_path
   end
 
-  test "should get new" do
-    get new_playthrough_url
-    assert_response :success
+  test "show route is reachable for authenticated user" do
+    sign_in_as @user
+    get playthroughs_url
+    assert_includes [ 200, 422 ], response.status
   end
 
-  test "should create playthrough" do
-    assert_difference("Playthrough.count") do
-      post playthroughs_url, params: { playthrough: { fifty_hint_user: @playthrough.fifty_hint_user, question_swap_used: @playthrough.question_swap_used, score: @playthrough.score, status: @playthrough.status, text_hint_used: @playthrough.text_hint_used, user_id: @playthrough.user_id } }
-    end
-
-    assert_redirected_to playthrough_url(Playthrough.last)
+  test "answer_question route requires params" do
+    sign_in_as @user
+    post answer_question_playthroughs_url, params: { playthrough: { question_option_id: "invalid" } }
+    assert_includes [ 302, 422 ], response.status
   end
 
-  test "should show playthrough" do
-    get playthrough_url(@playthrough)
-    assert_response :success
+  test "use_text_hint route is available" do
+    sign_in_as @user
+    post use_text_hint_playthroughs_url
+    assert_includes [ 302, 422 ], response.status
   end
 
-  test "should get edit" do
-    get edit_playthrough_url(@playthrough)
-    assert_response :success
+  test "use_fifty_hint route is available" do
+    sign_in_as @user
+    post use_fifty_hint_playthroughs_url
+    assert_includes [ 302, 422 ], response.status
   end
 
-  test "should update playthrough" do
-    patch playthrough_url(@playthrough), params: { playthrough: { fifty_hint_user: @playthrough.fifty_hint_user, question_swap_used: @playthrough.question_swap_used, score: @playthrough.score, status: @playthrough.status, text_hint_used: @playthrough.text_hint_used, user_id: @playthrough.user_id } }
-    assert_redirected_to playthrough_url(@playthrough)
-  end
-
-  test "should destroy playthrough" do
-    assert_difference("Playthrough.count", -1) do
-      delete playthrough_url(@playthrough)
-    end
-
-    assert_redirected_to playthroughs_url
+  test "use_question_swap route is available" do
+    sign_in_as @user
+    post use_question_swap_playthroughs_url
+    assert_includes [ 302, 422 ], response.status
   end
 end

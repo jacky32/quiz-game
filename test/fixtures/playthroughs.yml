@@ -2,16 +2,10 @@
 
 one:
   user: one
-  score: 1
+  score: 50
   status: 1
-  text_hint_used: false
-  fifty_hint_user: false
-  question_swap_used: false
 
 two:
   user: two
-  score: 1
+  score: 75
   status: 1
-  text_hint_used: false
-  fifty_hint_user: false
-  question_swap_used: false
